@@ -1,0 +1,52 @@
+
+.login-wrapper {
+  width: 20%;
+  display: flex;
+  margin: auto;
+  text-align: center;
+  min-height: 100vh;
+  align-items: center;
+  .out-icon {
+    position: absolute;
+    right: 3px;
+    top: 21px;
+    color: var(--color-gray);
+  }
+}
+.background{
+  background: linear-gradient(45deg,var(--color-syan),var(--color-blue));
+  color: var(--color-white);
+  padding: 10px;
+}
+
+.fa-camera{
+color: white;
+height: 50px;
+width: 50px;
+line-height: 50px;
+border-radius: 50%;
+cursor: pointer;
+font-weight: bold;
+border: 1px solid var(--color-white);
+margin-top: 10px;
+}
+
+
+
+form{
+  width: 100%;
+}
+
+.upload-National{
+  width:100%;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  background: linear-gradient(45deg,var(--color-syan),var(--color-blue));
+}
+
+.Sign-up{
+  @extend .upload-National;
+  width: 80%;
+  margin-top: 100px;
+}
