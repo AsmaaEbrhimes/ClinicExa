@@ -1,61 +1,241 @@
+.wrapper-main {
+  position: relative;
+  img {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: block;
+  }
 
-
-.flex-center{
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 70px;
+    top: 350px;
+    left: 0;
+    right: 0;
+    height: 150px;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(to top, rgb(235, 231, 231), transparent);
+  }
+}
+.position-relative {
+  position: relative;
+}
+.speachfication-doctor {
+  position: absolute;
   display: flex;
-  width: 40%;
-  margin: auto;
-  margin-top: 10px;
-  text-align: center;
   flex-direction: column;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  top: 60%;
+  left: 50%;
+  padding: 20px;
   border-radius: 10px;
-  overflow: hidden;
-
-  h5{
-    background-color: var(--color-blue);
+  right: 50%;
+  width: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 8888888;
+  gap: 10px;
+  background-color: white;
+  div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+  }
+  .contact-doctor {
+    border-bottom: 1px solid var(--color-border-medium);
+    padding: 20px;
+    cursor: pointer;
+  }
+  div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  input {
+    border: 1px solid var(--color-nav-text);
+  }
+  button {
+    background-color: var(--color-heart-red);
     color: white;
-    padding:10px;
+    width: 100%;
     font-size: 20px;
+    font-weight: bold;
   }
-  .header-otp{
+}
+.icon-doctor {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 0 0;
+  top: -66px;
+  z-index: 11111111111111;
+  position: relative;
+  p {
+    text-align: center;
+    margin: 10px auto;
+    font-weight: bold;
+  }
+  i {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 28px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .fa-heart-pulse {
+    background-color: var(--color-heart-red);
+    color: var(--color-bg-white);
+  }
+
+  .fa-brain {
+    background-color: var(--color-brain-pink);
+    color: var(--color-bg-white);
+  }
+
+  .fa-tooth {
+    background-color: var(--color-dental-blue);
+    color: var(--color-bg-white);
+  }
+
+  .fa-lungs {
+    background-color: var(--color-lungs-cyan);
+    color: var(--color-bg-white);
+  }
+
+  .fa-briefcase-medical {
+    background-color: var(--color-medical-green);
+    color: var(--color-bg-white);
+  }
+
+  .fa-flask {
+    background-color: var(--color-light-yellow);
+    color: var(--color-text-primary);
+  }
+
+  .fa-hospital {
+    background-color: var(--color-hospital-orange);
+    color: var(--color-bg-white);
+  }
+
+  .fa-stethoscope {
+    background-color: var(--color-btn-primary);
+    color: var(--color-bg-white);
+  }
+}
+
+.filter-doctor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  button {
+    border: 2px solid var(--color-btn-primary);
+    font-weight: bold;
+    width: 10%;
+    border-radius: 25px;
+    transition: 0.3s linear;
     font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    &:hover {
+      background-color: var(--color-btn-primary);
+      color: white;
+    }
   }
-  .otp-number{
-    background-color: #eee;
-    color:var(--color-blue) ;
-    width: fit-content;
-    margin: auto;
+}
+
+.search-doctor {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  margin: auto;
+  div {
+    width: 100%;
+    position: relative;
+    input {
+      border: 2px solid var(--color-btn-primary);
+      width: 100%;
+    }
+    .fa-magnifying-glass-plus {
+      position: absolute;
+      right: 0;
+      height: 36px;
+      width: 36px;
+      line-height: 36px;
+      margin-right: 2px;
+      text-align: center;
+      top: 12px;
+      color: white;
+      font-weight: bold;
+      background-color: var(--color-btn-primary);
+    }
+  }
+}
+
+.wraper-doctor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  cursor: pointer;
+
+  > div {
+    background-color: var(--color-bg-white);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--color-border-light);
+    }
+
+    p {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    .fa-star {
+      color: var(--color-star-gold);
+    }
+  }
+  button {
+    background-color: var(--color-dental-blue);
+    color: white;
+    margin-top: 10px;
     font-weight: bold;
-    padding: 10px 15px;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    p{
-      span{
-        position: relative;
-        padding-left: 10px;
-        font-size: 25px;
-      }
-    }
+    width: 100%;
   }
-  .desc-otp{
-    width: 85%;
-    margin: auto;
-  }
-  .footer-otp{
-    background-color: #eee;
-    padding: 10px;
-    margin-top: 50px;
-    a{
-    color:var(--color-blue);
-    }
-    span{
-      color: gray;
-      margin-left:5px;
-    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .filter-doctor button,
+  .search-doctor {
+    width: 90%;
   }
 }

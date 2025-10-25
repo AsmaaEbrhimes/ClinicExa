@@ -57,7 +57,6 @@ export class CoreServiesService {
    * @param endpoint
    * @param params
    */
-
   delete<T>(endpoint: string, params?: { [key: string]: any }): Observable<T> {
     let httpParams = new HttpParams();
     if (params) {

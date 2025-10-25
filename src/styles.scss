@@ -6,13 +6,48 @@
 }
 
 :root {
-  --color-gray: #666666;
-  --color-blue: #1ea6d6;
-  --color-syan: #43c1cc;
-  --color-bink: #ef2278;
-  --color-white: #ffffff;
-}
+  /* Primary Colors */
+  --color-primary-green: #00A878;
+  --color-primary-teal: #4DD0E1;
 
+  /* Icon Colors */
+  --color-heart-red: #E53935;
+  --color-brain-pink: #EC407A;
+  --color-dental-blue: #42A5F5;
+  --color-lungs-cyan: #26C6DA;
+  --color-medical-green: #66BB6A;
+  --color-light-yellow: #FDD835;
+  --color-hospital-orange: #FFA726;
+
+  /* Button Colors */
+  --color-btn-primary: #00BFA5;
+  --color-btn-hover: #00897B;
+
+  /* Text Colors */
+  --color-text-primary: #263238;
+  --color-text-secondary: #546E7A;
+  --color-text-light: #78909C;
+
+  /* Background Colors */
+  --color-bg-white: #FFFFFF;
+  --color-bg-light: #F5F5F5;
+  --color-bg-card: #FAFAFA;
+
+  /* Border Colors */
+  --color-border-light: #E0E0E0;
+  --color-border-medium: #BDBDBD;
+
+  /* Star Rating */
+  --color-star-gold: #FFC107;
+
+  /* Navigation */
+  --color-nav-text: #455A64;
+  --color-nav-active: #00897B;
+
+  /* Header Specific */
+  --header-border: #E0E0E0;
+  --header-shadow: rgba(0, 0, 0, 0.08);
+}
 .Group {
   position: relative;
 }
@@ -23,8 +58,12 @@ input {
   margin-top: 10px;
   outline: none;
   border: 0;
-  border: 1px solid var(--color-gray);
+  // border: 1px solid var(--color-gray);
   border-radius: 7px;
+}
+
+li{
+  list-style: none;
 }
 
 button {
@@ -36,3 +75,4 @@ button {
     opacity: 0.7;
   }
 }
+

@@ -1,0 +1,30 @@
+.Wrapper-Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background-color: var(--color-bg-white);
+  border-bottom: 1px solid var(--header-border);
+  box-shadow: 0 2px 8px var(--header-shadow);
+
+  .fa-stethoscope {
+    color: var(--color-btn-primary);
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  span {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  li {
+    padding: 0 10px;
+    cursor: pointer;
+  }
+}
