@@ -1,0 +1,64 @@
+<div class="register-wrapper">
+  <form [formGroup]="Formregister()">
+    <div class="background">
+      <p>Create an Account For Doctor</p>
+    </div>
+
+    <div class="Group">
+      <input formControlName="name" placeholder="Enter Your NameAr" />
+      <i class="fa-solid fa-user out-icon"></i>
+    </div>
+
+    <div class="Group">
+      <input formControlName="nameEn" placeholder="Enter Your NameEn" />
+    </div>
+
+    <div class="Group">
+      <input formControlName="gender" placeholder="Enter Your Gender" />
+    </div>
+    <!-- <div class="Group">Birthday</div> -->
+
+    <div class="Group">
+      <textarea formControlName="notes" placeholder="Enter Your Notes"></textarea>
+    </div>
+
+    <div class="Group">
+      <input formControlName="phone" placeholder="Enter Your phone" />
+      <i class="fa-solid fa-phone out-icon"></i>
+    </div>
+
+    <div class="Group">
+      <input formControlName="email" placeholder="Enter Your email" />
+      <i class="fa-solid fa-envelope out-icon"></i>
+    </div>
+
+    <div class="Group">
+      <input formControlName="userName" placeholder="Enter Your userName" />
+    </div>
+
+    <div class="Group">
+      <input formControlName="password" placeholder="Enter Your Password" type="password" />
+      <i class="fa-solid fa-lock out-icon"></i>
+    </div>
+
+    <div class="Group">
+      <input formControlName="confirmPassword" placeholder="Enter Your confirmPassword" type="password" />
+      <i class="fa-solid fa-lock out-icon"></i>
+    </div>
+        <!-- <div class="Group">nationalId</div> -->
+        <!-- <div class="Group">specializationTypeId</div> -->
+
+
+
+    <div class="Group-btn">
+      <!-- <button class="upload-National">
+        <i class="fa-solid fa-cloud-arrow-up"></i> Upload Your National ID Card
+      </button> -->
+      <button class="Sign-up">
+         Sign Up
+        </button>
+    </div>
+  </form>
+</div>
+
+

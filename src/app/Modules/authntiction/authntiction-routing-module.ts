@@ -1,4 +1,4 @@
-import { Login } from './login/login';
+import { Login } from '../../shared/login/login';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 

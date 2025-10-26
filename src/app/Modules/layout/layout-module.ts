@@ -4,8 +4,6 @@ import { CommonModule } from '@angular/common';
 import { LayoutRoutingModule } from './layout-routing-module';
 import { MainDoctor } from './main-doctor/main-doctor';
 import { SharedModule } from '../../shared/shared-module';
-import { ButtonModule } from 'primeng/button';
-
 
 @NgModule({
   declarations: [
@@ -14,8 +12,7 @@ import { ButtonModule } from 'primeng/button';
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    SharedModule,
-    ButtonModule
+    SharedModule
   ]
 })
 export class LayoutModule { }

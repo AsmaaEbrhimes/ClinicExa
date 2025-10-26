@@ -5,8 +5,30 @@
   </div>
   <div>
     <ul>
-      <li>Login</li>
-      <li>Register</li>
+      <li (click)="showDialogLogin()">Login</li>
+      <li (click)="showDialog()">Register</li>
     </ul>
   </div>
 </div>
+
+<p-dialog
+  [modal]="true"
+  [(visible)]="visible"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [maximizable]="true"
+>
+  <app-register></app-register>
+</p-dialog>
+
+
+
+<p-dialog
+  [modal]="true"
+  [(visible)]="visible2"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [maximizable]="true"
+>
+  <app-login></app-login>
+</p-dialog>

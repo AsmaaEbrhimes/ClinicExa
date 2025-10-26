@@ -1,0 +1,44 @@
+
+.background {
+  text-align: center;
+  padding: 10px;
+  p{
+    font-weight: bolder;
+  }
+}
+
+input,textarea{
+  border: 1px solid var(--color-nav-active);
+}
+
+.out-icon {
+  position: absolute;
+  right: 3px;
+  top: 21px;
+  color: var(--color-gray);
+}
+
+
+.Group-btn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// .upload-National{
+//    width: 80%;
+//    margin: 20px auto;
+//  background: linear-gradient(45deg,var(--color-btn-primary),var(--color-primary-teal));
+//  color: white;
+// }
+
+.Sign-up{
+   margin: 20px auto;
+ background: linear-gradient(45deg,var(--color-btn-primary),var(--color-primary-teal));
+ color: white;
+  position: relative;
+  // @extend .upload-National;
+  width: 50%;
+   font-weight: bolder;
+  margin:20px auto;
+}

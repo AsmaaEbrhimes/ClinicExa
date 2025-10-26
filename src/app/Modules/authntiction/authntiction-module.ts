@@ -2,20 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthntictionRoutingModule } from './authntiction-routing-module';
-import { Register } from './register/register';
-import { Login } from './login/login';
+import { Register } from '../../shared/register/register';
 import { OTP } from './otp/otp';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../../shared/shared-module';
 
 @NgModule({
-  declarations: [
-    Register,
-    Login,
-    OTP
-  ],
-  imports: [
-    CommonModule,
-    AuthntictionRoutingModule
-  ]
+  declarations: [ OTP],
+  imports: [CommonModule, AuthntictionRoutingModule, ReactiveFormsModule, SharedModule],
+  exports: [OTP],
 })
-export class AuthntictionModule { }
+export class AuthntictionModule {}
