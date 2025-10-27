@@ -1,12 +1,13 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
+import { environment } from '../../environments/environment';
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class CoreServiesService {
-  private baseUrl: string = 'environment.apiUrl';
+export class Data {
+
+  private baseUrl: string = environment.baseApi;
   constructor(private http: HttpClient) {}
 
   // ============================================== GET Request ============================================== //
@@ -45,11 +46,7 @@ export class CoreServiesService {
   }
   // ============================================== POST Request ============================================== //
 
-
-
-
-
-
+  
 
   // ============================================== Delete Request ============================================== //
   /**

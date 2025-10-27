@@ -1,5 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+// import { Data } from '../../Core/Servies/data';
+import { Data } from '../../Core/Servies/data';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './register.scss',
 })
 export class Register implements OnInit {
-  constructor(private FB: FormBuilder) {}
+  constructor(private FB: FormBuilder, private data: Data) {}
   ngOnInit(): void {
     this.createForm();
   }
@@ -20,12 +22,7 @@ export class Register implements OnInit {
       name: ['', Validators.required],
       nameEn: ['', Validators.required],
       gender: 1,
-      dateOfBirth: {
-        year: 0,
-        month: 0,
-        day: 0,
-        dayOfWeek: 0,
-      },
+      dateOfBirth: ['', Validators.required],
       notes: ['', Validators.required],
       phone: ['', Validators.required],
       email: ['', Validators.required],
@@ -38,4 +35,35 @@ export class Register implements OnInit {
 
     this.Formregister.set(form);
   }
+
+onSubmit() {
+  const rawValue = this.Formregister().value;
+
+  const date = new Date(rawValue.dateOfBirth);
+
+  if (isNaN(date.getTime())) {
+    return;
+  }
+
+  const dateOfBirthObj = {
+    year: date.getFullYear(),
+    month: date.getMonth() + 1,
+    day: date.getDate(),
+    dayOfWeek: date.getDay(),
+  };
+
+  const finalData = {
+    ...rawValue,
+    dateOfBirth: dateOfBirthObj,
+  };
+
+  this.data.post('Auth/RegisterDoctor', finalData).subscribe({
+    next: (res) => console.log('✅ تم الإرسال:', res)
+  });
+
+}
+
+
+
+
 }

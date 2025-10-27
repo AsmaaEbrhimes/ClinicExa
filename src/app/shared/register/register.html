@@ -1,5 +1,5 @@
 <div class="register-wrapper">
-  <form [formGroup]="Formregister()">
+  <form [formGroup]="Formregister()" (ngSubmit)="onSubmit()">
     <div class="background">
       <p>Create an Account For Doctor</p>
     </div>
@@ -16,7 +16,20 @@
     <div class="Group">
       <input formControlName="gender" placeholder="Enter Your Gender" />
     </div>
-    <!-- <div class="Group">Birthday</div> -->
+
+    <div class="Group" (click)="dateOfBirth.showOverlay()">
+       <p-datepicker
+       #dateOfBirth
+    formControlName="dateOfBirth"
+    placeholder="Enter Your Date of Birth"
+    dateFormat="dd.mm.yy"
+    dataType="date"
+    style="width: 100%;"
+     appendTo="body"
+  [showOnFocus]="false"
+   >
+  </p-datepicker>
+    </div>
 
     <div class="Group">
       <textarea formControlName="notes" placeholder="Enter Your Notes"></textarea>
@@ -42,23 +55,29 @@
     </div>
 
     <div class="Group">
-      <input formControlName="confirmPassword" placeholder="Enter Your confirmPassword" type="password" />
+      <input
+        formControlName="confirmPassword"
+        placeholder="Enter Your confirmPassword"
+        type="password"
+      />
       <i class="fa-solid fa-lock out-icon"></i>
     </div>
-        <!-- <div class="Group">nationalId</div> -->
-        <!-- <div class="Group">specializationTypeId</div> -->
-
-
+    <div class="Group">
+      <input formControlName="nationalId" placeholder="Enter Your nationalId" type="text" />
+    </div>
+    <div class="Group">
+      <input
+        formControlName="specializationTypeId"
+        placeholder="Enter Your specializationTypeId"
+        type="text"
+      />
+    </div>
 
     <div class="Group-btn">
       <!-- <button class="upload-National">
         <i class="fa-solid fa-cloud-arrow-up"></i> Upload Your National ID Card
       </button> -->
-      <button class="Sign-up">
-         Sign Up
-        </button>
+      <button class="Sign-up" type="submit">Sign Up</button>
     </div>
   </form>
 </div>
-
-

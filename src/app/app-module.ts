@@ -5,15 +5,15 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { providePrimeNG } from 'primeng/config';
 import { RouterModule } from '@angular/router';
 import Aura from '@primeuix/themes/aura';
-import { AuthntictionModule } from './Modules/authntiction/authntiction-module';
+import { CoreModule } from './Core/Interceptor/core.module';
 
 @NgModule({
   declarations: [App],
-  imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot([]),SharedModule],
+  imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot([]),SharedModule,CoreModule],
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(withInterceptorsFromDi()),
@@ -27,6 +27,18 @@ import { AuthntictionModule } from './Modules/authntiction/authntiction-module';
     }
   })
   ],
+
+  // providers: [
+  //   provideBrowserGlobalErrorListeners(),
+  //   provideAnimationsAsync(),
+  //   providePrimeNG({
+  //     theme: {
+  //       preset: Aura,
+  //       options: { darkModeSelector: 'none' }
+  //     }
+  //   })
+  // ],
+
   bootstrap: [App],
 })
 export class AppModule {}
