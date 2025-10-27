@@ -42,11 +42,11 @@ export class Data {
    * @param body
    */
   post<T>(endpoint: string, body: any): Observable<T> {
-    return this.http.post<T>(`${this.baseUrl}/${endpoint}`, body);
+    return this.http.post<T>(`${this.baseUrl}${endpoint}`, body);
   }
   // ============================================== POST Request ============================================== //
 
-  
+
 
   // ============================================== Delete Request ============================================== //
   /**

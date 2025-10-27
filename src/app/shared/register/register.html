@@ -14,21 +14,20 @@
     </div>
 
     <div class="Group">
-      <input formControlName="gender" placeholder="Enter Your Gender" />
+      <input formControlName="gender" placeholder="Enter Your Gender" type="number" />
     </div>
 
     <div class="Group" (click)="dateOfBirth.showOverlay()">
-       <p-datepicker
-       #dateOfBirth
-    formControlName="dateOfBirth"
-    placeholder="Enter Your Date of Birth"
-    dateFormat="dd.mm.yy"
-    dataType="date"
-    style="width: 100%;"
-     appendTo="body"
-  [showOnFocus]="false"
-   >
-  </p-datepicker>
+      <p-datepicker
+        #dateOfBirth
+        formControlName="dateOfBirth"
+        placeholder="Enter Your Date of Birth"
+        dateFormat="dd.mm.yy"
+        dataType="date"
+        style="width: 100%"
+        appendTo="body"
+        [showOnFocus]="false">
+      </p-datepicker>
     </div>
 
     <div class="Group">

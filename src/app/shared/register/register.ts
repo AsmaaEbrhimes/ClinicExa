@@ -38,30 +38,16 @@ export class Register implements OnInit {
 
 onSubmit() {
   const rawValue = this.Formregister().value;
-
   const date = new Date(rawValue.dateOfBirth);
+console.log(rawValue.dateOfBirth)
 
-  if (isNaN(date.getTime())) {
-    return;
-  }
-
-  const dateOfBirthObj = {
-    year: date.getFullYear(),
-    month: date.getMonth() + 1,
-    day: date.getDate(),
-    dayOfWeek: date.getDay(),
-  };
-
-  const finalData = {
-    ...rawValue,
-    dateOfBirth: dateOfBirthObj,
-  };
-
-  this.data.post('Auth/RegisterDoctor', finalData).subscribe({
+  this.data.post('Auth/RegisterDoctor', this.Formregister().value).subscribe({
     next: (res) => console.log('✅ تم الإرسال:', res)
   });
 
 }
+
+
 
 
 
