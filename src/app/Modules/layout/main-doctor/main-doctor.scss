@@ -192,9 +192,28 @@
   }
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
+@media (min-width: 320px) and (max-width: 767px) {
   .filter-doctor button,
   .search-doctor {
     width: 90%;
   }
 }
+
+
+
+@media (min-width:767px) and (max-width:1200px) {
+  .filter-doctor  {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:767px) and (max-width:1200px) {
+  .filter-doctor  {
+    button{
+      width: 30%;
+    }
+    flex-wrap: wrap;
+  }
+}
+
+

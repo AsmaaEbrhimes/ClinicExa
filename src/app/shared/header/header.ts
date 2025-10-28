@@ -19,4 +19,7 @@ export class Header{
    showDialogLogin() {
     this.visible2 = true;
   }
+  CloseDilog(){
+    this.visible = false;
+  }
 }

@@ -10,9 +10,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Register } from './register/register';
 import { Login } from './login/login';
 import { DatePickerModule } from 'primeng/datepicker';
+import { Success } from './success/success';
+import { Error } from './error/error';
 @NgModule({
-  declarations: [Header, Footer, Loader, Register, Login],
+  declarations: [Header, Footer, Loader, Register, Login, Success, Error],
   imports: [CommonModule, SharedRoutingModule, DialogModule, ButtonModule,ReactiveFormsModule, DatePickerModule],
-  exports: [Header, Footer, Loader],
+  exports: [Header, Footer, Loader,Success, Error],
 })
 export class SharedModule {}

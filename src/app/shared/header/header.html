@@ -1,3 +1,5 @@
+<app-error></app-error>
+<app-success></app-success>
 <div class="Wrapper-Header">
   <div>
     <i class="fa-solid fa-stethoscope"></i>
@@ -17,12 +19,10 @@
   [style]="{ width: '50rem' }"
   [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
   [maximizable]="true"
-   [focusOnShow]="false" 
+  [focusOnShow]="false"
 >
-  <app-register></app-register>
+  <app-register (CloseDilog)="CloseDilog()"></app-register>
 </p-dialog>
-
-
 
 <p-dialog
   [modal]="true"

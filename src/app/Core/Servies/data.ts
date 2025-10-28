@@ -24,7 +24,7 @@ export class Data {
         }
       });
     }
-    return this.http.get<T>(`${this.baseUrl}/${endpoint}`, {
+    return this.http.get<T>(`${this.baseUrl}${endpoint}`, {
       params: httpParams,
     });
   }

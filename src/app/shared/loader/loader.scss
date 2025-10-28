@@ -4,13 +4,15 @@
             top: 50%;
             top: 0;
             transform: translateX(-50%,-50%);
-            z-index: 99999999999999999;
+            z-index: 55555555555555555555555 !important;
               display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             width: 100%;
             background-color: rgba(255, 255, 255, 0.826);
+            pointer-events: none;
+            border: 10px solid red;
         }
 
         .spinner div {

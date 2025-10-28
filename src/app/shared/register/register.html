@@ -14,7 +14,12 @@
     </div>
 
     <div class="Group">
-      <input formControlName="gender" placeholder="Enter Your Gender" type="number" />
+      <select formControlName="gender">
+        <option disabled selected>اختر النوع</option>
+        @for(item of dataGender(); track item.id) {
+        <option [ngValue]="item.id">{{ item.name }}</option>
+        }
+      </select>
     </div>
 
     <div class="Group" (click)="dateOfBirth.showOverlay()">
@@ -26,7 +31,8 @@
         dataType="date"
         style="width: 100%"
         appendTo="body"
-        [showOnFocus]="false">
+        [showOnFocus]="false"
+      >
       </p-datepicker>
     </div>
 
@@ -73,9 +79,6 @@
     </div>
 
     <div class="Group-btn">
-      <!-- <button class="upload-National">
-        <i class="fa-solid fa-cloud-arrow-up"></i> Upload Your National ID Card
-      </button> -->
       <button class="Sign-up" type="submit">Sign Up</button>
     </div>
   </form>
