@@ -1,11 +1,11 @@
 <app-header></app-header>
-<div class="wrapper-otp">
+<form [formGroup]="FormOtp()" (ngSubmit)="onSupmit()" class="wrapper-otp">
   <div class="content-otp">
-    <i class="fa-solid fa-stethoscope"></i>
-    <h3>Clincxa</h3>
-    <p>نتعامل معا لصحه أفضل</p>
-    <p-inputotp [length]="6" />
-    <button>Send</button>
+    <i class="fa-solid fa-lock"></i>
+    <h3>OTP Verification</h3>
+    <p>Enter the 6-digit code sent to your device</p>
+    <p-inputotp formControlName="code" [length]="6" />
+    <button type="submit">Send</button>
   </div>
-</div>
+</form>
 <app-footer></app-footer>

@@ -12,6 +12,7 @@ body{
   position: relative !important;
 }
 
+
 :root {
   /* Primary Colors */
   --color-primary-green: #00A878;
@@ -83,3 +84,14 @@ button {
   }
 }
 
+
+.error-message{
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+ .p-overlay-mask-enter{
+  z-index: 4 !important;
+}

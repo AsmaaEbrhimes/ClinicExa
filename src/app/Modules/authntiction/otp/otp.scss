@@ -1,9 +1,4 @@
 .wrapper-otp {
- position: relative;
-  background-image: url('/assets/Img/shutterstock_582888679.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -12,26 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(206, 200, 200, 0.712);
-
-    z-index: 1;
-  }
-
-  > * {
-    position: relative;
-    z-index: 2;
-  }
-
+  background: linear-gradient(43deg, var(--color-primary-green), var(--color-primary-teal));
   p {
     margin: 0;
     color: #333;
@@ -40,24 +16,32 @@
 }
 .content-otp {
   background-color: white;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   padding: 50px 20px;
   border-radius: 10px;
-
-      background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    button{
-      background-color: var(--color-btn-primary);
-      color: white;
-      margin-top: 30px;
-      width: 100%;
-      border: 1px solid white;
-    }
+  background-color: white;
+h3{
+  font-weight: bolder;
+  padding: 20px 0;
 }
-.fa-stethoscope {
-  color: var(--color-btn-primary);
+  button {
+    background-color: var(--color-btn-primary);
+    color: white;
+    margin-top: 30px;
+    width: 100%;
+    border: 1px solid white;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+.fa-lock {
   font-size: 30px;
   font-weight: bold;
+  background: linear-gradient(43deg, var(--color-primary-green), var(--color-primary-teal));
+  height: 60px;
+  width: 60px;
+  border-radius: 60%;
+  line-height: 60px;
+  color: white;
+  // padding: 10px;
 }

@@ -7,11 +7,17 @@
     <div class="Group">
       <input formControlName="userName" placeholder="Enter Your userName" />
       <i class="fa-solid fa-user out-icon"></i>
+      <div class="wrapper-error">
+        <small class="error-message" *ngIf="getControlName('userName')?.invalid&&getControlName('userName')?.touched">This Field Is Requierd</small>
+      </div>
     </div>
 
     <div class="Group">
       <input formControlName="password" placeholder="Enter Your password" />
       <i class="fa-solid fa-lock out-icon"></i>
+      <div class="wrapper-error">
+        <small class="error-message" *ngIf="getControlName('password')?.invalid&&getControlName('password')?.touched">This Field Is Requierd</small>
+      </div>
     </div>
 
 

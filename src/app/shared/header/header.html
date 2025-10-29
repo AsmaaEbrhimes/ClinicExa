@@ -16,7 +16,7 @@
 <p-dialog
   [modal]="true"
   [(visible)]="visible"
-  [style]="{ width: '50rem' }"
+  [style]="{ width: '50rem','z-index': '4' }"
   [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
   [maximizable]="true"
   [focusOnShow]="false"
@@ -27,9 +27,9 @@
 <p-dialog
   [modal]="true"
   [(visible)]="visible2"
-  [style]="{ width: '50rem' }"
+  [style]="{ width: '50rem','z-index': '4' }"
   [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
   [maximizable]="true"
 >
-  <app-login></app-login>
+  <app-login (CloseDilog)="CloseDilog()"></app-login>
 </p-dialog>

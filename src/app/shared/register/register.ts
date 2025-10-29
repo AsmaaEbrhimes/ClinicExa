@@ -12,14 +12,14 @@ import { Router } from '@angular/router';
   styleUrl: './register.scss',
 })
 export class Register implements OnInit {
-  constructor(private FB: FormBuilder, private data: Data , private Router:Router) {}
+  constructor(private FB: FormBuilder, private data: Data) {}
   ngOnInit(): void {
     this.createForm();
     this.GetTypeGender();
   }
 
   Formregister = signal<FormGroup>(new FormGroup({}));
-  dataGender=signal<Igender[]>([])
+  dataGender = signal<Igender[]>([]);
 
   @Output() CloseDilog = new EventEmitter<boolean>();
 
@@ -29,7 +29,7 @@ export class Register implements OnInit {
       nameEn: ['', Validators.required],
       gender: 1,
       dateOfBirth: ['', Validators.required],
-      notes: ['', Validators.required],
+      notes: [''],
       phone: ['', Validators.required],
       email: ['', Validators.required],
       userName: ['', Validators.required],
@@ -43,6 +43,10 @@ export class Register implements OnInit {
   }
 
   onSubmit() {
+    if (this.Formregister().invalid) {
+      this.Formregister().markAllAsTouched();
+      return;
+    }
     const dateValue = this.Formregister().get('dateOfBirth')?.value;
     if (dateValue) {
       const dateArray = dateValue.toISOString().split('T');
@@ -50,17 +54,19 @@ export class Register implements OnInit {
     }
     this.data.post('Auth/RegisterDoctor', this.Formregister().value).subscribe((res) => {
       if (res) {
-        this.Router.navigate(['auth/otp'])
+        this.Formregister().reset()
         this.CloseDilog.emit(false);
       }
     });
   }
 
-GetTypeGender() {
-  this.data.get<Igender[]>('GeneralEnums/Gender').subscribe((res) => {
-    this.dataGender.set(res);
-  });
-}
+  GetTypeGender() {
+    this.data.get<Igender[]>('GeneralEnums/Gender').subscribe((res) => {
+      this.dataGender.set(res);
+    });
+  }
 
-
+  getControlName(controlName: string) {
+    return this.Formregister().get(controlName);
+  }
 }

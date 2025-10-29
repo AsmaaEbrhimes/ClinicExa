@@ -7,10 +7,16 @@
     <div class="Group">
       <input formControlName="name" placeholder="Enter Your NameAr" />
       <i class="fa-solid fa-user out-icon"></i>
+      <div class="wrapper-error">
+        <small class="error-message" *ngIf="getControlName('name')?.invalid&&getControlName('name')?.touched">This Field Is Requierd</small>
+      </div>
     </div>
 
     <div class="Group">
       <input formControlName="nameEn" placeholder="Enter Your NameEn" />
+       <div class="wrapper-error">
+        <small class="error-message" *ngIf="getControlName('nameEn')?.invalid&&getControlName('nameEn')?.touched">This Field Is Requierd</small>
+      </div>
     </div>
 
     <div class="Group">
@@ -20,6 +26,9 @@
         <option [ngValue]="item.id">{{ item.name }}</option>
         }
       </select>
+       <div class="wrapper-error">
+        <small class="error-message" *ngIf="getControlName('gender')?.invalid&&getControlName('gender')?.touched">This Field Is Requierd</small>
+      </div>
     </div>
 
     <div class="Group" (click)="dateOfBirth.showOverlay()">
@@ -34,6 +43,9 @@
         [showOnFocus]="false"
       >
       </p-datepicker>
+       <div class="wrapper-error">
+        <small class="error-message" *ngIf="getControlName('dateOfBirth')?.invalid&&getControlName('dateOfBirth')?.touched">This Field Is Requierd</small>
+      </div>
     </div>
 
     <div class="Group">
@@ -43,20 +55,32 @@
     <div class="Group">
       <input formControlName="phone" placeholder="Enter Your phone" />
       <i class="fa-solid fa-phone out-icon"></i>
+       <div class="wrapper-error">
+        <small class="error-message" *ngIf="getControlName('phone')?.invalid&&getControlName('phone')?.touched">This Field Is Requierd</small>
+      </div>
     </div>
 
     <div class="Group">
       <input formControlName="email" placeholder="Enter Your email" />
       <i class="fa-solid fa-envelope out-icon"></i>
+       <div class="wrapper-error">
+        <small class="error-message" *ngIf="getControlName('email')?.invalid&&getControlName('email')?.touched">This Field Is Requierd</small>
+      </div>
     </div>
 
     <div class="Group">
       <input formControlName="userName" placeholder="Enter Your userName" />
+       <div class="wrapper-error">
+        <small class="error-message" *ngIf="getControlName('userName')?.invalid&&getControlName('userName')?.touched">This Field Is Requierd</small>
+      </div>
     </div>
 
     <div class="Group">
       <input formControlName="password" placeholder="Enter Your Password" type="password" />
       <i class="fa-solid fa-lock out-icon"></i>
+       <div class="wrapper-error">
+        <small class="error-message" *ngIf="getControlName('password')?.invalid&&getControlName('password')?.touched">This Field Is Requierd</small>
+      </div>
     </div>
 
     <div class="Group">
@@ -66,9 +90,15 @@
         type="password"
       />
       <i class="fa-solid fa-lock out-icon"></i>
+       <div class="wrapper-error">
+        <small class="error-message" *ngIf="getControlName('confirmPassword')?.invalid&&getControlName('confirmPassword')?.touched">This Field Is Requierd</small>
+      </div>
     </div>
     <div class="Group">
       <input formControlName="nationalId" placeholder="Enter Your nationalId" type="text" />
+       <div class="wrapper-error">
+        <small class="error-message" *ngIf="getControlName('nationalId')?.invalid&&getControlName('nationalId')?.touched">This Field Is Requierd</small>
+      </div>
     </div>
     <div class="Group">
       <input
@@ -76,6 +106,9 @@
         placeholder="Enter Your specializationTypeId"
         type="text"
       />
+       <div class="wrapper-error">
+        <small class="error-message" *ngIf="getControlName('specializationTypeId')?.invalid&&getControlName('specializationTypeId')?.touched">This Field Is Requierd</small>
+      </div>
     </div>
 
     <div class="Group-btn">

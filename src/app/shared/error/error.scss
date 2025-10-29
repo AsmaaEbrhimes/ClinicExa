@@ -1,13 +1,13 @@
 .error-messgae {
-  position: absolute;
+  position: fixed;
   top: 10px;
   right: 10px;
   z-index: 999999999999999 !important;
-  background-color: white;
+  background-color: red;
   padding: 15px 30px;
   border-radius: 5px;
-  border-left: 7px solid var(--color-heart-red);
   border-top: 1px solid #ccc;
+  color: white;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 .fa-xmark{
   position: absolute;
@@ -28,4 +28,11 @@
     cursor: pointer;
   }
 }
+}
+button{
+  padding: 0 !important;
+  margin: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
 }

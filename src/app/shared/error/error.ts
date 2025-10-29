@@ -12,4 +12,8 @@ constructor(private core:Core){}
 get ResultError(){
   return this.core._Error.asObservable()
 }
+
+HiddenError(){
+  this.core._Error.next(false)
+}
 }
