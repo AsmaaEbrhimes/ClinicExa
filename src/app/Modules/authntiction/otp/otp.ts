@@ -23,9 +23,11 @@ export class OTP implements OnInit {
   }
 
   onSupmit() {
-    console.log(this.FormOtp().value)
-    this.data.post('Auth/ConfirmEmail',this.FormOtp().value).subscribe((res)=>{
-      console.log(res)
+    const formvalue=this.FormOtp().value
+    const otp={
+      code:formvalue.code.trim()
+    }
+    this.data.post('Auth/ConfirmEmail',otp).subscribe((res)=>{
     })
   }
 }

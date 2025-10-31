@@ -1,9 +1,8 @@
+import { Core } from './../../Core/Servies/core';
 import { Component, EventEmitter, OnInit, Output, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { Data } from '../../Core/Servies/data';
 import { Data } from '../../Core/Servies/data';
 import { Igender } from '../Interface/shared.interface';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,9 +11,10 @@ import { Router } from '@angular/router';
   styleUrl: './register.scss',
 })
 export class Register implements OnInit {
-  constructor(private FB: FormBuilder, private data: Data) {}
+  constructor(private FB: FormBuilder, private data: Data, private Core: Core) {}
   ngOnInit(): void {
     this.createForm();
+    this.CheckIsExsistName();
     this.GetTypeGender();
   }
 
@@ -42,6 +42,10 @@ export class Register implements OnInit {
     this.Formregister.set(form);
   }
 
+  phoneNumber(event: any) {
+    this.Formregister().get('phone')?.patchValue(event);
+  }
+
   onSubmit() {
     if (this.Formregister().invalid) {
       this.Formregister().markAllAsTouched();
@@ -54,7 +58,7 @@ export class Register implements OnInit {
     }
     this.data.post('Auth/RegisterDoctor', this.Formregister().value).subscribe((res) => {
       if (res) {
-        this.Formregister().reset()
+        this.Formregister().reset();
         this.CloseDilog.emit(false);
       }
     });
@@ -64,6 +68,11 @@ export class Register implements OnInit {
     this.data.get<Igender[]>('GeneralEnums/Gender').subscribe((res) => {
       this.dataGender.set(res);
     });
+  }
+
+  CheckIsExsistName() {
+    const control = this.Formregister().get('userName');
+    this.Core.checkExistence(control, 'Auth/CheckUserNameExists', 'UserName');
   }
 
   getControlName(controlName: string) {

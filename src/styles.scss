@@ -13,49 +13,50 @@ body{
 }
 
 
+
+
 :root {
-  /* Primary Colors */
-  --color-primary-green: #00A878;
-  --color-primary-teal: #4DD0E1;
+  /* Greens */
+  --emerald: #00A878;
+  --mint: #00BFA5;
+  --teal-dark: #00897B;
+  --sage: #66BB6A;
 
-  /* Icon Colors */
-  --color-heart-red: #E53935;
-  --color-brain-pink: #EC407A;
-  --color-dental-blue: #42A5F5;
-  --color-lungs-cyan: #26C6DA;
-  --color-medical-green: #66BB6A;
-  --color-light-yellow: #FDD835;
-  --color-hospital-orange: #FFA726;
+  /* Blues & Cyans */
+  --sky-blue: #4DD0E1;
+  --ocean-blue: #42A5F5;
+  --cyan-bright: #26C6DA;
 
-  /* Button Colors */
-  --color-btn-primary: #00BFA5;
-  --color-btn-hover: #00897B;
+  /* Reds & Pinks */
+  --crimson: #E53935;
+  --rose: #EC407A;
 
-  /* Text Colors */
-  --color-text-primary: #263238;
-  --color-text-secondary: #546E7A;
-  --color-text-light: #78909C;
+  /* Yellows & Oranges */
+  --sunshine: #FDD835;
+  --amber: #FFA726;
 
-  /* Background Colors */
-  --color-bg-white: #FFFFFF;
-  --color-bg-light: #F5F5F5;
-  --color-bg-card: #FAFAFA;
+  /* Neutrals - Grays */
+  --charcoal: #263238;
+  --slate: #546E7A;
+  --steel: #78909C;
+  --cloud: #E0E0E0;
+  --silver: #BDBDBD;
+  --ash: #F5F5F5;
+  --pearl: #FAFAFA;
+  --white: #FFFFFF;
 
-  /* Border Colors */
-  --color-border-light: #E0E0E0;
-  --color-border-medium: #BDBDBD;
+  /* Accent Colors */
+  --gold: #FFC107;
+  --navy: #455A64;
 
-  /* Star Rating */
-  --color-star-gold: #FFC107;
-
-  /* Navigation */
-  --color-nav-text: #455A64;
-  --color-nav-active: #00897B;
-
-  /* Header Specific */
-  --header-border: #E0E0E0;
-  --header-shadow: rgba(0, 0, 0, 0.08);
+  /* Utilities */
+  --shadow-soft: rgba(0, 0, 0, 0.08);
 }
+
+
+
+
+
 .Group {
   position: relative;
 }
@@ -66,7 +67,6 @@ input,textarea,select {
   margin-top: 10px;
   outline: none;
   border: 0;
-  // border: 1px solid var(--color-gray);
   border-radius: 7px;
 }
 

@@ -12,9 +12,17 @@ import { Login } from './login/login';
 import { DatePickerModule } from 'primeng/datepicker';
 import { Success } from './success/success';
 import { Error } from './error/error';
+import { TelphoneInput } from './telphone-input/telphone-input';
 @NgModule({
-  declarations: [Header, Footer, Loader, Register, Login, Success, Error],
-  imports: [CommonModule, SharedRoutingModule, DialogModule, ButtonModule,ReactiveFormsModule, DatePickerModule],
-  exports: [Header, Footer, Loader,Success, Error],
+  declarations: [Header, Footer, Loader, Register, Login, Success, Error, TelphoneInput],
+  imports: [
+    CommonModule,
+    SharedRoutingModule,
+    DialogModule,
+    ButtonModule,
+    ReactiveFormsModule,
+    DatePickerModule,
+  ],
+  exports: [Header, Footer, Loader, Success, Error, TelphoneInput],
 })
 export class SharedModule {}

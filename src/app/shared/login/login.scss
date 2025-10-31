@@ -8,7 +8,7 @@
 }
 
 input,textarea{
-  border: 1px solid var(--color-nav-active);
+  border: 1px solid var(--teal-dark);
 }
 
 .out-icon {
@@ -30,7 +30,7 @@ input,textarea{
 .Sign-in{
      width: 40%;
    margin: 20px auto;
- background: linear-gradient(45deg,var(--color-btn-primary),var(--color-primary-teal));
+ background: linear-gradient(45deg,var(--mint),var(--sky-blue));
  color: white;
  font-weight: bolder;
 }

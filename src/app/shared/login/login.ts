@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Data } from '../../Core/Servies/data';
 import { Router } from '@angular/router';
 import * as jwtdecoded from 'jwt-decode';
+import { IresponseToken } from '../Interface/shared.interface';
 @Component({
   selector: 'app-login',
   standalone: false,
@@ -42,20 +43,19 @@ export class Login implements OnInit {
     });
   }
 
-
-
   HandelResponseSuccess(res: any) {
+    let decodedToken: IresponseToken = jwtdecoded.jwtDecode(res.token);
     this.FormLogin().reset();
     sessionStorage.setItem('token', res.token);
-    setTimeout(() => {
-      this.Router.navigate(['auth/otp']);
-    }, 2000);
-    let decodedToken = jwtdecoded.jwtDecode(res.token);
+    if (decodedToken.EmailActivated == 'False') {
+      setTimeout(() => {
+        this.Router.navigate(['auth/otp']);
+      }, 4500);
+    }
     this.CloseDilog.emit(false);
   }
 
-  
-    getControlName(controlname: string) {
+  getControlName(controlname: string) {
     return this.FormLogin().get(controlname);
   }
 }

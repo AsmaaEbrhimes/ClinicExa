@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(43deg, var(--color-primary-green), var(--color-primary-teal));
+  background: linear-gradient(43deg, var(--emerald), var(--sky-blue));
   p {
     margin: 0;
     color: #333;
@@ -25,7 +25,7 @@ h3{
   padding: 20px 0;
 }
   button {
-    background-color: var(--color-btn-primary);
+    background-color: var(--mint);
     color: white;
     margin-top: 30px;
     width: 100%;
@@ -37,11 +37,10 @@ h3{
 .fa-lock {
   font-size: 30px;
   font-weight: bold;
-  background: linear-gradient(43deg, var(--color-primary-green), var(--color-primary-teal));
+  background: linear-gradient(43deg, var(--emerald), var(--sky-blue));
   height: 60px;
   width: 60px;
   border-radius: 60%;
   line-height: 60px;
   color: white;
-  // padding: 10px;
 }

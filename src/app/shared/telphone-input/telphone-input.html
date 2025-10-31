@@ -1,0 +1,33 @@
+<div class="flex-item" (click)="$event.stopPropagation()">
+  <div class="phone-select">
+    <button (click)="onShowCountry()">
+      <span>{{ selectedCode() }}</span>
+    </button>
+    <i class="fa fa-caret-down"></i>
+  </div>
+
+  <div class="phone-input">
+    <input
+      type="text"
+      placeholder="Enter phone number"
+      (input)="onInputChange($event)"
+      [attr.maxlength]="maxLength()"
+    />
+  </div>
+
+  @if (country()) {
+    <div class="dropdown-counter">
+      <div class="search-wrapper">
+        <input placeholder="Search" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <ul>
+        @for (item of GetAllCountry(); track item.code) {
+          <li (click)="onSelectCountry(item)">
+            {{ item.name }} ({{ item.code }})
+          </li>
+        }
+      </ul>
+    </div>
+  }
+</div>

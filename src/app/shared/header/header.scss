@@ -7,15 +7,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
-  background-color: var(--color-bg-white);
-  border-bottom: 1px solid var(--header-border);
-  box-shadow: 0 2px 8px var(--header-shadow);
+  background-color: var(--white);
+  border-bottom: 1px solid var(--cloud);
+  box-shadow: 0 2px 8px var(--shadow-soft);
   background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   .fa-stethoscope {
-    color: var(--color-btn-primary);
+    color: var(--mint);
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;

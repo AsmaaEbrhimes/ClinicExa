@@ -56,43 +56,43 @@
   }
 
   .fa-heart-pulse {
-    background-color: var(--color-heart-red);
-    color: var(--color-bg-white);
+    background-color: var(--crimson);
+    color: var(--white);
   }
 
   .fa-brain {
-    background-color: var(--color-brain-pink);
-    color: var(--color-bg-white);
+    background-color: var(--rose);
+    color: var(--white);
   }
 
   .fa-tooth {
-    background-color: var(--color-dental-blue);
-    color: var(--color-bg-white);
+    background-color: var(--ocean-blue);
+    color: var(--white);
   }
 
   .fa-lungs {
-    background-color: var(--color-lungs-cyan);
-    color: var(--color-bg-white);
+    background-color: var(--cyan-bright);
+    color: var(--white);
   }
 
   .fa-briefcase-medical {
-    background-color: var(--color-medical-green);
-    color: var(--color-bg-white);
+    background-color: var(--sage);
+    color: var(--white);
   }
 
   .fa-flask {
-    background-color: var(--color-light-yellow);
-    color: var(--color-text-primary);
+    background-color: var(--sunshine);
+    color: var(--white);
   }
 
   .fa-hospital {
-    background-color: var(--color-hospital-orange);
-    color: var(--color-bg-white);
+    background-color: var(--amber);
+    color: var(--white);
   }
 
   .fa-stethoscope {
-    background-color: var(--color-btn-primary);
-    color: var(--color-bg-white);
+    background-color: var(--mint);
+    color: var(--white);
   }
 }
 
@@ -103,14 +103,14 @@
   gap: 10px;
   margin-bottom: 10px;
   button {
-    border: 2px solid var(--color-btn-primary);
+    border: 2px solid var(--mint);
     font-weight: bold;
     width: 10%;
     border-radius: 25px;
     transition: 0.3s linear;
     font-size: 20px;
     &:hover {
-      background-color: var(--color-btn-primary);
+      background-color: var(--mint);
       color: white;
     }
   }
@@ -125,7 +125,7 @@
     width: 100%;
     position: relative;
     input {
-      border: 2px solid var(--color-btn-primary);
+      border: 2px solid var(--mint);
       width: 100%;
     }
     .fa-magnifying-glass-plus {
@@ -139,7 +139,7 @@
       top: 12px;
       color: white;
       font-weight: bold;
-      background-color: var(--color-btn-primary);
+      background-color: var(--mint);
     }
   }
 }
@@ -152,7 +152,7 @@
   cursor: pointer;
 
   > div {
-    background-color: var(--color-bg-white);
+    background-color: var(--white);
     border-radius: 12px;
     padding: 20px;
     text-align: center;
@@ -176,15 +176,15 @@
       margin-top: 15px;
       font-size: 18px;
       font-weight: 600;
-      color: var(--color-text-primary);
+      color: var(--charcoal);
     }
 
     .fa-star {
-      color: var(--color-star-gold);
+      color: var(--gold);
     }
   }
   button {
-    background-color: var(--color-dental-blue);
+    background-color: var(--ocean-blue);
     color: white;
     margin-top: 10px;
     font-weight: bold;
