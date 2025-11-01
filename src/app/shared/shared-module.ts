@@ -15,6 +15,7 @@ import { Error } from './error/error';
 import { TelphoneInput } from './telphone-input/telphone-input';
 import { Translation } from './translation/translation';
 import { TranslateModule } from '@ngx-translate/core';
+import { DrawerModule } from 'primeng/drawer';
 @NgModule({
   declarations: [Header, Footer, Loader, Register, Login, Success, Error, TelphoneInput, Translation],
   imports: [
@@ -24,7 +25,8 @@ import { TranslateModule } from '@ngx-translate/core';
     ButtonModule,
     ReactiveFormsModule,
     DatePickerModule,
-     TranslateModule.forChild() 
+     TranslateModule.forChild(),
+     DrawerModule
   ],
   exports: [Header, Footer, Loader, Success, Error, TelphoneInput,TranslateModule],
 

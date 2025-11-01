@@ -6,22 +6,29 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header{
-  constructor(){}
+export class Header {
+  constructor() {}
 
   visible: boolean = false;
   visible2: boolean = false;
+  visibleDrawer: boolean = false;
 
   showDialog() {
     this.visible = true;
+    this.visibleDrawer = false;
   }
 
-   showDialogLogin() {
+  showDialogLogin() {
     this.visible2 = true;
+    this.visibleDrawer = false;
   }
-  
-  CloseDilog(){
+
+  CloseDilog() {
     this.visible = false;
-        this.visible2 = false;
+    this.visible2 = false;
+  }
+
+  ShowDraw() {
+    this.visibleDrawer = true;
   }
 }

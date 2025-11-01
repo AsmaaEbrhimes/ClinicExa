@@ -23,6 +23,9 @@ export class OTP implements OnInit {
   }
 
   onSupmit() {
+    if(this.FormOtp().invalid){
+      return
+    }
     const formvalue=this.FormOtp().value
     const otp={
       code:formvalue.code.trim()
