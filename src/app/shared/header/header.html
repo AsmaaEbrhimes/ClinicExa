@@ -5,10 +5,11 @@
     <i class="fa-solid fa-stethoscope"></i>
     <span>Clinicexa</span>
   </div>
+  <div><app-translation></app-translation></div>
   <div>
     <ul>
-      <li (click)="showDialogLogin()">Login</li>
-      <li (click)="showDialog()">Register</li>
+      <li (click)="showDialogLogin()">{{ 'auth.login' | translate }}</li>
+      <li (click)="showDialog()">{{ 'auth.register' | translate }}</li>
     </ul>
   </div>
 </div>
@@ -16,7 +17,7 @@
 <p-dialog
   [modal]="true"
   [(visible)]="visible"
-  [style]="{ width: '50rem','z-index': '4' }"
+  [style]="{ width: '50rem', 'z-index': '4' }"
   [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
   [maximizable]="true"
   [focusOnShow]="false"
@@ -27,7 +28,7 @@
 <p-dialog
   [modal]="true"
   [(visible)]="visible2"
-  [style]="{ width: '50rem','z-index': '4' }"
+  [style]="{ width: '50rem', 'z-index': '4' }"
   [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
   [maximizable]="true"
 >

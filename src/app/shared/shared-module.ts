@@ -13,8 +13,10 @@ import { DatePickerModule } from 'primeng/datepicker';
 import { Success } from './success/success';
 import { Error } from './error/error';
 import { TelphoneInput } from './telphone-input/telphone-input';
+import { Translation } from './translation/translation';
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
-  declarations: [Header, Footer, Loader, Register, Login, Success, Error, TelphoneInput],
+  declarations: [Header, Footer, Loader, Register, Login, Success, Error, TelphoneInput, Translation],
   imports: [
     CommonModule,
     SharedRoutingModule,
@@ -22,7 +24,9 @@ import { TelphoneInput } from './telphone-input/telphone-input';
     ButtonModule,
     ReactiveFormsModule,
     DatePickerModule,
+     TranslateModule.forChild() 
   ],
-  exports: [Header, Footer, Loader, Success, Error, TelphoneInput],
+  exports: [Header, Footer, Loader, Success, Error, TelphoneInput,TranslateModule],
+
 })
 export class SharedModule {}

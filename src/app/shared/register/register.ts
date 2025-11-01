@@ -75,6 +75,8 @@ export class Register implements OnInit {
     this.Core.checkExistence(control, 'Auth/CheckUserNameExists', 'UserName');
   }
 
+
+
   getControlName(controlName: string) {
     return this.Formregister().get(controlName);
   }
