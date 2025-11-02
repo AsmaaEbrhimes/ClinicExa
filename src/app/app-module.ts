@@ -73,6 +73,7 @@ import Aura from '@primeuix/themes/aura';
 import { CoreModule } from './Core/Interceptor/core.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
+
 //===========================Translatetion=======================================//
 export class CustomTranslateLoader implements TranslateLoader {
   constructor(
