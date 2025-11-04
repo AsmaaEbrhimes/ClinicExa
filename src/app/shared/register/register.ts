@@ -46,7 +46,6 @@ export class Register implements OnInit {
       confirmPassword: ['', Validators.required],
       nationalId: ['', Validators.required],
       Documents: ['', Validators.required],
-      specializationTypeId: 0,
     });
 
     this.Formregister.set(form);
