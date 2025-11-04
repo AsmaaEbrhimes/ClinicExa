@@ -16,6 +16,10 @@ import { TelphoneInput } from './telphone-input/telphone-input';
 import { Translation } from './translation/translation';
 import { TranslateModule } from '@ngx-translate/core';
 import { DrawerModule } from 'primeng/drawer';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { SelectModule } from 'primeng/select';  
+
 @NgModule({
   declarations: [Header, Footer, Loader, Register, Login, Success, Error, TelphoneInput, Translation],
   imports: [
@@ -26,7 +30,10 @@ import { DrawerModule } from 'primeng/drawer';
     ReactiveFormsModule,
     DatePickerModule,
      TranslateModule.forChild(),
-     DrawerModule
+     DrawerModule,
+     InputGroupModule,
+     InputGroupAddonModule,
+     SelectModule
   ],
   exports: [Header, Footer, Loader, Success, Error, TelphoneInput,TranslateModule],
 

@@ -3,10 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class Data {
-
   private baseUrl: string = environment.baseApi;
   constructor(private http: HttpClient) {}
 
@@ -28,15 +27,9 @@ export class Data {
       params: httpParams,
     });
   }
-  // ============================================== GET Request ============================================== //
+  // ==============================================GET Request============================================== //
 
-
-
-
-
-
-
-  // ============================================== POST Request ============================================== //
+  // ==============================================POST Request============================================== //
   /**
    * @param endpoint
    * @param body
@@ -45,8 +38,6 @@ export class Data {
     return this.http.post<T>(`${this.baseUrl}${endpoint}`, body);
   }
   // ============================================== POST Request ============================================== //
-
-
 
   // ============================================== Delete Request ============================================== //
   /**
@@ -77,10 +68,6 @@ export class Data {
   }
   // ============================================== Delete Request ============================================== //
 
-
-
-
-
   // ============================================== Put Request ============================================== //
   /**
    * @param endpoint
@@ -90,13 +77,6 @@ export class Data {
     return this.http.put<T>(`${this.baseUrl}/${endpoint}`, body);
   }
   // ============================================== Put Request ============================================== //
-
-
-
-
-
-
-
 
   // ============================================== Patch Request ============================================== //
   /**

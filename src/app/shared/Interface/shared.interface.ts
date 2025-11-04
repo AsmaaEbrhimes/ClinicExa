@@ -15,5 +15,13 @@ export interface IresponseToken {
   aud: string;
 }
 
+export interface IspecializationType {
+  id:number;
+  name:string;
+}
 
-export interface Icountry{ name: string, code: string, length: number }
+export interface Icountry {
+  name: string;
+  code: string;
+  length: number;
+}

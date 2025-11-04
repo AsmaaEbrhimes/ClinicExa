@@ -13,7 +13,38 @@ input,textarea,select{
 select{
   cursor: pointer;
 }
-
+.upload-group {
+margin-top: 10px;
+text-align: center;
+border:3px dotted var(--sky-blue);
+padding: 10px;
+p{
+  color: var(--sky-blue);
+  padding: 10px 0;
+}
+label{
+  cursor: pointer;
+  text-align: center;
+margin: auto;
+  display: block;
+  background: linear-gradient(45deg,var(--sky-blue),var(--mint));
+  height: 50px;
+  width: 50px;
+  line-height: 35px;
+  border-radius: 50%;
+  padding: 10px;
+  color: white;
+  &:hover{
+    opacity: 0.5;
+  }
+}
+input[type="file"]{
+  display: none;
+}
+.pdf-preview{
+  margin-top: 10px;
+}
+}
 .out-icon {
   position: absolute;
   right: 3px;

@@ -96,7 +96,11 @@
       <div class="wrapper-error">
         <small
           class="error-message"
-          *ngIf="getControlName('userName')?.invalid && getControlName('userName')?.touched && !getControlName('userName')?.hasError('exists')"
+          *ngIf="
+            getControlName('userName')?.invalid &&
+            getControlName('userName')?.touched &&
+            !getControlName('userName')?.hasError('exists')
+          "
           >This Field Is Requierd
         </small>
 
@@ -148,10 +152,12 @@
     </div>
 
     <div class="Group">
-      <input
+      <p-select
         formControlName="specializationTypeId"
-        placeholder="Enter Your specializationTypeId"
-        type="text"
+        [options]="dataSpecializationType()"
+        optionLabel="name"
+        optionValue="id"
+        placeholder="select specialization"
       />
       <div class="wrapper-error">
         <small
@@ -160,8 +166,31 @@
             getControlName('specializationTypeId')?.invalid &&
             getControlName('specializationTypeId')?.touched
           "
-          >This Field Is Requierd</small
-        >
+          >This Field Is Requierd
+        </small>
+      </div>
+    </div>
+
+    <div class="Group">
+      <div class="upload-group">
+        <p>Upload This File Pdf</p>
+        <label for="pdf-file"><i class="fa-solid fa-cloud-arrow-up"></i></label>
+        <input
+          accept="application/pdf"
+          (change)="onFileSelected($event)"
+          id="pdf-file"
+          type="file"
+        />
+        <div class="pdf-preview" *ngIf="pdfUrl">
+          <iframe [src]="pdfUrl" width="100%" height="400px"></iframe>
+        </div>
+      </div>
+      <div>
+        <small
+          class="error-message"
+          *ngIf="getControlName('Documents')?.invalid && getControlName('Documents')?.touched"
+          >This Field Is Requierd
+        </small>
       </div>
     </div>
 
