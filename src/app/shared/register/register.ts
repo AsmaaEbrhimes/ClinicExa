@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Data } from '../../Core/Servies/data';
 import { Igender, IspecializationType } from '../Interface/shared.interface';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { confirmePasswordValidtors } from '../../Core/Vaildtion/MatchPassword';
 
 @Component({
   selector: 'app-register',
@@ -33,20 +34,24 @@ export class Register implements OnInit {
   @Output() CloseDilog = new EventEmitter<boolean>();
 
   createForm() {
-    const form = this.FB.group({
-      name: ['', Validators.required],
-      nameEn: ['', Validators.required],
-      gender: 1,
-      dateOfBirth: ['', Validators.required],
-      notes: [''],
-      phone: ['', Validators.required],
-      email: ['', Validators.required],
-      userName: ['', Validators.required],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
-      nationalId: ['', Validators.required],
-      Documents: ['', Validators.required],
-    });
+    const form = this.FB.group(
+      {
+        name: ['', Validators.required],
+        nameEn: ['', Validators.required],
+        gender: ['', Validators.required],
+        dateOfBirth: ['', Validators.required],
+        notes: [''],
+        phone: ['', Validators.required],
+        email: ['', [  Validators.pattern(/^[a-zA-Z0-9._%+-]+@gmail\.com$/), Validators.required]],
+        userName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9]{7}$/)]],
+        password: ['', Validators.required],
+        confirmPassword: ['', Validators.required],
+        nationalId: ['', Validators.required],
+        Documents: ['', Validators.required],
+        specializationTypeId: ['', Validators.required],
+      },
+      { validator: confirmePasswordValidtors }
+    );
 
     this.Formregister.set(form);
   }
@@ -100,10 +105,7 @@ export class Register implements OnInit {
     }
 
     this.data.post('Auth/RegisterDoctor', this.Formregister().value).subscribe((res) => {
-      if (res) {
-        this.Formregister().reset();
-        this.CloseDilog.emit(false);
-      }
+      this.HandelRequestSuccess();
     });
   }
 
@@ -126,5 +128,26 @@ export class Register implements OnInit {
     this.data.get<IspecializationType[]>('GeneralEnums/specializationType').subscribe((res) => {
       this.dataSpecializationType.set(res);
     });
+  }
+
+  HandelRequestSuccess() {
+    this.Formregister().reset();
+    this.CloseDilog.emit(false);
+  }
+
+  get passwordChecks() {
+    const control = this.Formregister().get('password');
+    const errors = control?.errors?.['passwordStrength'];
+    const value = control?.value || '';
+
+    return (
+      errors || {
+        hasUpperCase: /[A-Z]/.test(value),
+        hasLowerCase: /[a-z]/.test(value),
+        hasNumber: /\d/.test(value),
+        hasSpecialChar: /[@$!%*?&]/.test(value),
+        hasMinLength: value.length >= 8,
+      }
+    );
   }
 }

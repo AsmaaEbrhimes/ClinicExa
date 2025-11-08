@@ -33,19 +33,19 @@
   <app-login (CloseDilog)="CloseDilog()"></app-login>
 </p-dialog>
 
-
-
-<p-drawer  [(visible)]="visibleDrawer" position="right">
+<p-drawer [(visible)]="visibleDrawer" position="right">
+  <div class="text-center">
+    <i class="fa-solid fa-stethoscope"></i>
+    <span>Clinicexa</span>
+  </div>
   <div class="setting-doctor">
-    <img
-    class="img-personal-doctor"
-        src="assets/Img/portrait-beautiful-young-girl-doctor-white-coat-she-looks-friendly-smiles-white-background_810738-1050.jpg"
-      />
-      <p>Asmaa</p>
+      <img class="img-personal-doctor" src="assets/Img/Doctor.webp" />
+      <button><i class="fa-solid fa-camera-retro"></i></button>
+    <p>Asmaa</p>
   </div>
   <ul>
-     <li (click)="showDialogLogin()">{{ 'auth.login' | translate }}</li>
-      <li (click)="showDialog()">{{ 'auth.register' | translate }}</li>
-      <li>LogOut</li>
+    <li (click)="showDialogLogin()">{{ 'auth.login' | translate }}</li>
+    <li (click)="showDialog()">{{ 'auth.register' | translate }}</li>
+    <li>LogOut</li>
   </ul>
 </p-drawer>

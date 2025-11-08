@@ -1,6 +1,32 @@
 {
+  "vaildtion": {
+    "required": " This Field Is Requierd",
+    "email": "Please enter a valid email address",
+    "exsistName": "This username already exists",
+    "patternUserName": "Username must contain only letters and numbers",
+    "vaildtionPassword": {
+      "hasUpperCase": "Must contain at least one uppercase letter (A–Z)",
+      "hasLowerCase": "Must contain at least one lowercase letter (a–z)",
+      "hasNumber": "Must contain at least one number (0–9)",
+      "hasSpecialChar": "Must contain at least one special character (@$!%*?&)",
+      "hasMinLength": "Must be at least 8 characters long"
+    }
+  },
   "auth": {
     "login": "Login",
-    "register":"Register"
+    "register": "Register",
+        "namear":"name Ar ",
+    "nameen":"name En ",
+    "phone":"phone",
+    "email":"email",
+    "username":"username",
+    "password":"password",
+    "confirmpassword":"confirm password",
+    "dateofbirth":"date of birth",
+    "specialization":"specialization",
+    "notes":"notes",
+    "nationalId":"national ID",
+        "gender":"gender"
+
   }
 }
