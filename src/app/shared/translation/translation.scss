@@ -4,18 +4,19 @@
   gap: 4px;
 }
 
-.wrapper-langaue{
+.wrapper-langaue {
   position: relative;
-  border: 2px solid #ccc;
+  border: 1px solid var(--dark-blue);
   border-radius: 5px;
-      width: 100%;
-      transition: 0.3s linear;
-      &:hover{
-        background-color: var(--sky-blue);
-        color: white;
-      }
-  button{
+  width: 100%;
+  transition: 0.3s linear;
+  &:hover {
+    background-color: var(--dark-blue);
+  }
+  button {
     width: 100%;
+    color: var(--dark-blue);
+    background-color: var(--light-gray);
     font-weight: bold;
   }
 }

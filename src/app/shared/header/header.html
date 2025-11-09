@@ -1,51 +1,31 @@
-<app-error></app-error>
-<app-success></app-success>
-<div class="Wrapper-Header">
-  <div>
-    <i class="fa-solid fa-stethoscope"></i>
-    <span>Clinicexa</span>
+
+<div class="Wrapper-header" [ngClass]="{'hight-auto':toggelHeader()}">
+
+  <div class="logo-clinxa">
+    <img width="107" height="52" src="../assets/Img/8fce882b2ee116f03bdfa1f077e3e493fc9de97d.png" />
+    <div class="action-user">
+      <app-translation></app-translation>
+      <button (click)="onToggelMenue()"><i class="fa-solid fa-bars"></i></button>
+    </div>
   </div>
 
-  <div class="flex-item">
-    <app-translation></app-translation>
-    <button aria-label="Search" (click)="ShowDraw()"><i class="fa-solid fa-bars"></i></button>
+  <div class="links-header">
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Content</li>
+      <li>Others</li>
+    </ul>
+  </div>
+
+  <div class="auth-user">
+    <div class="bell-icon">
+      <i class="fa-solid fa-bell"></i>
+    </div>
+    <i class="fa-solid fa-user"></i>
+    <div class="btn-auth">
+      <button>Login</button>
+      <button>Sign up</button>
+    </div>
   </div>
 </div>
-
-<p-dialog
-  [modal]="true"
-  [(visible)]="visible"
-  [style]="{ width: '50rem', 'z-index': '4' }"
-  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
-  [maximizable]="true"
-  [focusOnShow]="false"
->
-  <app-register (CloseDilog)="CloseDilog()"></app-register>
-</p-dialog>
-
-<p-dialog
-  [modal]="true"
-  [(visible)]="visible2"
-  [style]="{ width: '50rem', 'z-index': '4' }"
-  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
-  [maximizable]="true"
->
-  <app-login (CloseDilog)="CloseDilog()"></app-login>
-</p-dialog>
-
-<p-drawer [(visible)]="visibleDrawer" position="right">
-  <div class="text-center">
-    <i class="fa-solid fa-stethoscope"></i>
-    <span>Clinicexa</span>
-  </div>
-  <div class="setting-doctor">
-      <img class="img-personal-doctor" src="assets/Img/Doctor.webp" />
-      <button><i class="fa-solid fa-camera-retro"></i></button>
-    <p>Asmaa</p>
-  </div>
-  <ul>
-    <li (click)="showDialogLogin()">{{ 'auth.login' | translate }}</li>
-    <li (click)="showDialog()">{{ 'auth.register' | translate }}</li>
-    <li>LogOut</li>
-  </ul>
-</p-drawer>
