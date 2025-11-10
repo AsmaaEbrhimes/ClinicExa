@@ -1,6 +1,4 @@
-
-<div class="Wrapper-header" [ngClass]="{'hight-auto':toggelHeader()}">
-
+<div class="Wrapper-header" [ngClass]="{ 'hight-auto': toggelHeader() }">
   <div class="logo-clinxa">
     <img width="107" height="52" src="../assets/Img/8fce882b2ee116f03bdfa1f077e3e493fc9de97d.png" />
     <div class="action-user">
@@ -24,8 +22,31 @@
     </div>
     <i class="fa-solid fa-user"></i>
     <div class="btn-auth">
-      <button>Login</button>
-      <button>Sign up</button>
+      <button (click)="showDialogLogin()">Login</button>
+      <button (click)="showDialogRegister()">Sign up</button>
     </div>
   </div>
 </div>
+
+
+
+<p-dialog
+  [modal]="true"
+  [(visible)]="visible"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [maximizable]="true"
+>
+<app-register></app-register>
+</p-dialog>
+
+
+<p-dialog
+  [modal]="true"
+  [(visible)]="visible2"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [maximizable]="true"
+>
+<app-login></app-login>
+</p-dialog>

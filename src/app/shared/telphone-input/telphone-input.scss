@@ -1,7 +1,7 @@
 .flex-item {
   position: relative;
   display: flex;
-  border: 1px solid var(--teal-dark);
+    border: 1px solid var(--Steel-Gray);
   align-items: center;
   border-radius: 5px;
   margin: 10px 0;
@@ -12,7 +12,7 @@
     align-items: center;
   }
   div:last-child {
-    border-left: 1px solid var(--teal-dark);
+    border-left: 1px solid var(--Steel-Gray);
     width: 100%;
     input {
       width: 100%;
@@ -34,7 +34,7 @@
   overflow: auto;
   z-index: 1111111111111;
   div {
-    border: 1px solid var(--teal-dark);
+      border: 1px solid var(--Steel-Gray);;
     margin: 10px;
     border-radius: 5px;
     input {

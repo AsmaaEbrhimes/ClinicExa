@@ -8,7 +8,7 @@
 }
 
 input,textarea,select{
-  border: 1px solid var(--teal-dark);
+  border: 1px solid var(--Steel-Gray);;
 }
 select{
   cursor: pointer;
@@ -62,13 +62,14 @@ input[type="file"]{
 
 .Sign-up{
    margin: 20px auto;
- background: linear-gradient(45deg,var(--mint),var(--sky-blue));
  color: white;
   position: relative;
-  // @extend .upload-National;
   width: 50%;
    font-weight: bolder;
   margin:20px auto;
+  background-color: var(--Pumpkin-Orange);
+  border-radius: 24px;
+  padding: 12px 16px;
 }
 
 
@@ -86,7 +87,7 @@ input[type="file"]{
       transition: 0.3s;
 
       &.valid {
-        color: #2ecc71 !important; 
+        color: #2ecc71 !important;
       }
     }
   }

@@ -9,28 +9,22 @@ import { Component, OnInit, signal } from '@angular/core';
 export class Header {
   constructor() {}
   toggelHeader = signal<boolean>(false);
-  // visible: boolean = false;
-  // visible2: boolean = false;
-  // visibleDrawer: boolean = false;
+  visible: boolean = false;
+  visible2: boolean = false;
 
-  // showDialog() {
-  //   this.visible = true;
-  //   this.visibleDrawer = false;
-  // }
+  showDialogRegister() {
+    this.visible = true;
+  }
 
-  // showDialogLogin() {
-  //   this.visible2 = true;
-  //   this.visibleDrawer = false;
-  // }
+  showDialogLogin() {
+    this.visible2 = true;
+  }
 
-  // CloseDilog() {
-  //   this.visible = false;
-  //   this.visible2 = false;
-  // }
+  CloseDilog() {
+    this.visible = false;
+    this.visible2 = false;
+  }
 
-  // ShowDraw() {
-  //   this.visibleDrawer = true;
-  // }
 
   onToggelMenue() {
     this.toggelHeader.set(!this.toggelHeader());

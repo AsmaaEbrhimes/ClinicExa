@@ -1,7 +1,7 @@
 .Wrapper-header {
   position: sticky;
   top: 0;
-  z-index: 3;
+  z-index: 5;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
@@ -119,6 +119,9 @@
   max-height: 100vh !important;
   transition: max-height 0.5s ease-in-out !important;
 }
+
+
+
 
 @media (min-width: 320px) and (max-width: 1200px) {
   .Wrapper-header {
