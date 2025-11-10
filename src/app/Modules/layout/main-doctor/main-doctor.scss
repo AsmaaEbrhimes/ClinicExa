@@ -4,7 +4,6 @@
     position: relative;
     width: 100%;
     height: 500px;
-    display: block;
   }
 
   &::after {
@@ -22,6 +21,77 @@
 }
 .position-relative {
   position: relative;
+}
+
+.exsist-Acount-doctor {
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  width: 24%;
+  padding: 15px;
+  font-weight: 500;
+  font-size: 24px;
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+  border-bottom-right-radius: 22px;
+  border: 1px solid var(--smoke-white);
+  background-color: var(--deep-navy);
+  color: var(--smoke-white);
+  .fa-arrow-right {
+    color: var(--warm-orange);
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.clip-path {
+  position: absolute;
+  top: 69.9%;
+  left: 3.4%;
+  width: 7%;
+  height: 100px;
+  background-color: var(--smoke-white);
+  clip-path: polygon(43% 1%, 0 32%, 1% 1%);
+  transform: rotate(370deg);
+  color: transparent;
+  z-index: 1;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    top: 1px;
+    left: 2px;
+    right: 5px;
+    bottom: 20px;
+    background-color: var(--deep-navy);
+    clip-path: polygon(43% 1%, 0 32%, 1% 1%);
+
+    z-index: -1;
+  }
+}
+.input-search {
+  width: 30%;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  input {
+    border-radius: 26px;
+    border: 1px solid var(--Royal-Wave);
+    background-color: var(--Misty-Sky);
+    padding: 12px 20px;
+  }
+  ::placeholder {
+    color: var(--Royal-Wave);
+    font-weight: bold;
+  }
+
+  .fa-magnifying-glass {
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    color: var(--Royal-Wave);
+  }
 }
 
 .icon-doctor {
@@ -56,164 +126,121 @@
   }
 
   .fa-heart-pulse {
-    background-color: var(--crimson);
-    color: var(--white);
+    background-color: var(--Crimson-Pulse);
+    color: var(--Mint-Whisper);
   }
 
   .fa-brain {
-    background-color: var(--rose);
-    color: var(--white);
+    background-color: var(--Rose-Pop);
+    color: var(--Mint-Whisper);
   }
 
   .fa-tooth {
-    background-color: var(--ocean-blue);
-    color: var(--white);
+    background-color: var(--Ocean-Wave);
+    color: var(--Mint-Whisper);
   }
 
   .fa-lungs {
-    background-color: var(--cyan-bright);
-    color: var(--white);
+    background-color: var(--Aqua-Breeze);
+    color: var(--Mint-Whisper);
   }
 
   .fa-briefcase-medical {
-    background-color: var(--sage);
-    color: var(--white);
+    background-color: var(--Fresh-Green);
+    color: var(--Mint-Whisper);
   }
 
   .fa-flask {
-    background-color: var(--sunshine);
-    color: var(--white);
+    background-color: var(--Golden-Sun);
+    color: var(--Mint-Whisper);
   }
 
   .fa-hospital {
-    background-color: var(--amber);
-    color: var(--white);
+    background-color: var(--warm-orange);
+    color: var(--Mint-Whisper);
   }
 
   .fa-stethoscope {
-    background-color: var(--mint);
-    color: var(--white);
+    background-color: var(--Mint-Wave);
+    color: var(--Mint-Whisper);
   }
 }
 
-.filter-doctor {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
-  button {
-    border: 2px solid var(--mint);
-    font-weight: bold;
-    width: 10%;
-    border-radius: 25px;
-    transition: 0.3s linear;
-    font-size: 20px;
-    &:hover {
-      background-color: var(--mint);
-      color: white;
-    }
-  }
-}
-
-.search-doctor {
-  display: flex;
-  justify-content: center;
-  width: 30%;
-  margin: auto;
-  div {
-    width: 100%;
-    position: relative;
-    input {
-      border: 2px solid var(--mint);
-      width: 100%;
-    }
-    .fa-magnifying-glass-plus {
-      position: absolute;
-      right: 0;
-      height: 36px;
-      width: 36px;
-      line-height: 36px;
-      margin-right: 2px;
-      text-align: center;
-      top: 12px;
-      color: white;
-      font-weight: bold;
-      background-color: var(--mint);
-    }
-  }
-}
-
-.wraper-doctor {
+.wrapper-doctor {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
   padding: 20px;
-  cursor: pointer;
-
-  > div {
-    background-color: var(--white);
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    }
-
+  gap: 20px;
+  .card-doctor {
+    padding: 10px;
+    background-color: var(--smoke-white);
+    border-radius: 14px;
     img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
+      height: 276.49px;
       border-radius: 8px;
-      border: 1px solid var(--color-border-light);
     }
-
+    h3 {
+      margin-bottom: 5px;
+    }
     p {
-      margin-top: 15px;
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--charcoal);
+      color: var(--tone-Gray);
+      margin-top: 7px;
+      font-size: 12px;
     }
-
     .fa-star {
-      color: var(--gold);
+      color: var(--bright-gold);
+    }
+    .requierment-doctor {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p{
+        margin-left: 4px;
+      }
+      span {
+        color: var(--royal-blue);
+        font-weight: 500;
+      }
+      button {
+        background-color: var(--Pumpkin-Orange);
+        border-radius: 18px;
+        color: var(--smoke-white);
+        font-weight: 500;
+      }
     }
   }
-  button {
-    background-color: var(--ocean-blue);
-    color: white;
-    margin-top: 10px;
-    font-weight: bold;
-    width: 100%;
+  .feadback-doctor {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .filter-doctor button,
-  .search-doctor {
+  .clip-path {
+    display: none;
+  }
+
+  .exsist-Acount-doctor,
+  .input-search {
     width: 90%;
+    font-size: 17px;
   }
 }
 
-
-
-@media (min-width:767px) and (max-width:1200px) {
-  .filter-doctor  {
-    flex-wrap: wrap;
+@media (min-width: 767px) and (max-width: 1200px) {
+  .clip-path {
+    display: none;
+  }
+  .exsist-Acount-doctor,
+  .input-search {
+    width: 40%;
+    font-size: 17px;
   }
 }
 
-@media (min-width:767px) and (max-width:1200px) {
-  .filter-doctor  {
-    button{
-      width: 30%;
-    }
-    flex-wrap: wrap;
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .clip-path {
+    top: 69.7%;
+    left: 3.2%;
   }
 }
-
-
