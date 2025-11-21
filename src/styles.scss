@@ -11,37 +11,6 @@ body {
   background-color: var(--light-blue-gray);
 }
 
-// :root {
-//   --emerald: #00A878;
-//   --mint: #00BFA5;
-//   --teal-dark: #00897B;
-//   --sage: #66BB6A;
-
-//   --sky-blue: #4DD0E1;
-//   --ocean-blue: #42A5F5;
-//   --cyan-bright: #26C6DA;
-
-//   --crimson: #E53935;
-//   --rose: #EC407A;
-
-//   --sunshine: #FDD835;
-//   --amber: #FFA726;
-
-//   --charcoal: #263238;
-//   --slate: #546E7A;
-//   --steel: #78909C;
-//   --cloud: #E0E0E0;
-//   --silver: #BDBDBD;
-//   --ash: #F5F5F5;
-//   --pearl: #FAFAFA;
-//   --white: #FFFFFF;
-
-//   --gold: #FFC107;
-//   --navy: #455A64;
-
-//   --shadow-soft: rgba(0, 0, 0, 0.08);
-// }
-
 :root {
   --light-blue-gray: #e0e5f3;
   --bright-blue: #5784f5;
@@ -67,9 +36,10 @@ body {
   --Golden-Sun: #fdd835;
   --Mint-Wave: #00bfa5;
   --Mint-Whisper: #effefa;
---tone-Gray:#908C8C;
---Pumpkin-Orange:#F47229;
---Steel-Gray :#7B7F88
+  --tone-Gray: #908c8c;
+  --Pumpkin-Orange: #f47229;
+  --Steel-Gray: #7b7f88;
+  --white-soft: #fefefe;
 }
 
 .Group {
@@ -114,4 +84,8 @@ button {
 
 .p-overlay-mask-enter {
   z-index: 4 !important;
+}
+
+.p-dialog-header{
+  padding: 0 !important;
 }

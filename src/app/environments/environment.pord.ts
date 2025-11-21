@@ -1,4 +1,4 @@
 export const environment={
-    baseApi:"http://clinicexaapi.runasp.net/api/",
+    baseApi:"https://clinicexaapi.runasp.net/api/",
     production:false
 }
