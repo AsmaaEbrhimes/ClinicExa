@@ -1,34 +1,38 @@
 <div class="Login-wrapper">
-  <img width="120" height="100" src="assets/Img/LogoAuth.png" alt="Logo"/>
+  <img width="120" height="100" src="assets/Img/LogoAuth.png" alt="Logo" />
+  <div class="flex-btn">
+    <button (click)="login()">Login</button>
+    <button (click)="Register()">Sign Up</button>
+  </div>
   <form [formGroup]="FormLogin()" (ngSubmit)="onSubmit()">
-    <div class="background">
-      <p>Exsist Login</p>
-    </div>
-
     <div class="Group">
+      <label>Name <span class="requierd">*</span></label>
       <input formControlName="userName" placeholder="Enter Your userName" />
       <i class="fa-solid fa-user out-icon"></i>
       <div class="wrapper-error">
-        <small class="error-message" *ngIf="getControlName('userName')?.invalid&&getControlName('userName')?.touched">This Field Is Requierd</small>
+        <small
+          class="error-message"
+          *ngIf="getControlName('userName')?.invalid && getControlName('userName')?.touched"
+          >This Field Is Requierd</small
+        >
       </div>
     </div>
 
     <div class="Group">
+      <label>password <span class="requierd">*</span></label>
       <input formControlName="password" placeholder="Enter Your password" />
       <i class="fa-solid fa-lock out-icon"></i>
       <div class="wrapper-error">
-        <small class="error-message" *ngIf="getControlName('password')?.invalid&&getControlName('password')?.touched">This Field Is Requierd</small>
+        <small
+          class="error-message"
+          *ngIf="getControlName('password')?.invalid && getControlName('password')?.touched"
+          >This Field Is Requierd</small
+        >
       </div>
     </div>
 
-
-
     <div class="Group-btn">
-      <button class="Sign-in" type="submit">
-         Sign In
-        </button>
+      <button class="Sign-in" type="submit">Sign In</button>
     </div>
   </form>
 </div>
-
-

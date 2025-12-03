@@ -18,7 +18,19 @@
     z-index: 1;
     background: linear-gradient(to top, rgb(235, 231, 231), transparent);
   }
+  .load-data{
+    background-color: white;
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+    cursor: pointer;
+    .fa-arrow-left{
+      color: var(--royal-blue);
+    }
+  }
 }
+
+
 .position-relative {
   position: relative;
 }
@@ -63,7 +75,7 @@
   .fa-magnifying-glass {
     position: absolute;
     right: 10px;
-    top: 25px;
+    top: 15px;
     color: var(--Royal-Wave);
   }
 }

@@ -1,105 +1,46 @@
 <div class="register-wrapper">
+  <img width="120" height="100" src="assets/Img/LogoAuth.png" alt="Logo" />
+  <div class="flex-btn">
+    <button (click)="login()">Login</button>
+    <button (click)="Register()">Sign Up</button>
+  </div>
   <form [formGroup]="Formregister()" (ngSubmit)="onSubmit()">
-    <div class="background">
-      <p>Create an Account For Doctor</p>
-    </div>
-
     <div class="Group">
-      <input formControlName="name" placeholder="{{'auth.namear'|translate}}" />
+      <input formControlName="name" placeholder="{{ 'auth.namear' | translate }}" />
       <i class="fa-solid fa-user out-icon"></i>
       <div class="wrapper-error">
         <small
           class="error-message"
           *ngIf="getControlName('name')?.invalid && getControlName('name')?.touched"
-          >{{"vaildtion.required"|translate}}</small
+          >{{ 'vaildtion.required' | translate }}</small
         >
       </div>
     </div>
 
     <div class="Group">
-      <input formControlName="nameEn" placeholder="{{'auth.nameen'|translate}}" />
-      <div class="wrapper-error">
-        <small
-          class="error-message"
-          *ngIf="getControlName('nameEn')?.invalid && getControlName('nameEn')?.touched"
-          >{{"vaildtion.required"|translate}}</small
-        >
-      </div>
-    </div>
-
-    <div class="Group">
-    <p-select
-        formControlName="gender"
-        [options]="dataGender()"
-        optionLabel="name"
-        optionValue="id"
-        placeholder="{{'auth.gender'|translate}}"
-      />
-      <div class="wrapper-error">
-        <small
-          class="error-message"
-          *ngIf="getControlName('gender')?.invalid && getControlName('gender')?.touched"
-          >{{"vaildtion.required"|translate}}</small
-        >
-      </div>
-    </div>
-
-    <div class="Group" (click)="dateOfBirth.showOverlay()">
-      <p-datepicker
-        #dateOfBirth
-        formControlName="dateOfBirth"
-       placeholder="{{'auth.dateofbirth'|translate}}"
-        dateFormat="dd.mm.yy"
-        dataType="date"
-        style="width: 100%"
-        appendTo="body"
-        [showOnFocus]="false"
-      >
-      </p-datepicker>
-      <div class="wrapper-error">
-        <small
-          class="error-message"
-          *ngIf="getControlName('dateOfBirth')?.invalid && getControlName('dateOfBirth')?.touched"
-          >{{"vaildtion.required"|translate}}</small
-        >
-      </div>
-    </div>
-
-    <div class="Group">
-      <textarea formControlName="notes" placeholder="{{'auth.notes'|translate}}"></textarea>
-    </div>
-
-    <div class="Group">
-      <app-telphone-input (phoneNumber)="phoneNumber($event)"></app-telphone-input>
-      <div>
-        <small
-          class="error-message"
-          *ngIf="getControlName('phone')?.invalid && getControlName('phone')?.touched"
-          >{{"vaildtion.required"|translate}}
-        </small>
-      </div>
-    </div>
-
-    <div class="Group">
-      <input type="email" formControlName="email" placeholder="{{'auth.email'|translate}}"/>
+      <input type="email" formControlName="email" placeholder="{{ 'auth.email' | translate }}" />
       <i class="fa-solid fa-envelope out-icon"></i>
       <div class="wrapper-error">
         <small
           class="error-message"
           *ngIf="getControlName('email')?.invalid && getControlName('email')?.touched &&!getControlName('email')?.errors?.['pattern']"
-          >{{"vaildtion.required"|translate}}</small
+          >{{ 'vaildtion.required' | translate }}</small
         >
 
         <small
           class="error-message"
           *ngIf="getControlName('email')?.errors?.['pattern'] && getControlName('email')?.touched"
-          >{{"vaildtion.email"|translate}}</small
+          >{{ 'vaildtion.email' | translate }}</small
         >
       </div>
     </div>
 
     <div class="Group">
-      <input maxlength="7" formControlName="userName" placeholder="{{'auth.username'|translate}}" />
+      <input
+        maxlength="7"
+        formControlName="userName"
+        placeholder="{{ 'auth.username' | translate }}"
+      />
       <div class="wrapper-error">
         <small
           class="error-message"
@@ -108,17 +49,17 @@
             getControlName('userName')?.touched &&
             !getControlName('userName')?.hasError('exists')
           "
-          >{{"vaildtion.required"|translate}}
+          >{{ 'vaildtion.required' | translate }}
         </small>
 
         <small class="error-message" *ngIf="getControlName('userName')?.hasError('exists')">
-          {{"vaildtion.exsistName"|translate}}
+          {{ 'vaildtion.exsistName' | translate }}
         </small>
 
         <small
           class="error-message"
           *ngIf="getControlName('userName')?.errors?.['pattern'] && getControlName('userName')?.touched"
-        >{{"vaildtion.patternUserName"|translate}}
+          >{{ 'vaildtion.patternUserName' | translate }}
         </small>
       </div>
     </div>
@@ -127,7 +68,7 @@
       <input
         maxlength="9"
         formControlName="password"
-        placeholder="{{'auth.password'|translate}}"
+        placeholder="{{ 'auth.password' | translate }}"
         type="password"
       />
       <i class="fa-solid fa-lock out-icon"></i>
@@ -135,21 +76,25 @@
         <small
           class="error-message"
           *ngIf="getControlName('password')?.invalid && getControlName('password')?.touched"
-          >{{"vaildtion.required"|translate}}</small
+          >{{ 'vaildtion.required' | translate }}</small
         >
 
         <ul class="password-rules" *ngIf="getControlName('password')?.touched">
           <li [class.valid]="passwordChecks.hasUpperCase">
-          • {{ 'vaildtion.vaildtionPassword.hasUpperCase' | translate }}
+            • {{ 'vaildtion.vaildtionPassword.hasUpperCase' | translate }}
           </li>
           <li [class.valid]="passwordChecks.hasLowerCase">
-           • {{ 'vaildtion.vaildtionPassword.hasLowerCase' | translate }}
+            • {{ 'vaildtion.vaildtionPassword.hasLowerCase' | translate }}
           </li>
-          <li [class.valid]="passwordChecks.hasNumber">• {{ 'vaildtion.vaildtionPassword.hasNumber' | translate }}</li>
+          <li [class.valid]="passwordChecks.hasNumber">
+            • {{ 'vaildtion.vaildtionPassword.hasNumber' | translate }}
+          </li>
           <li [class.valid]="passwordChecks.hasSpecialChar">
             • {{ 'vaildtion.vaildtionPassword.hasSpecialChar' | translate }}
           </li>
-          <li [class.valid]="passwordChecks.hasMinLength">• {{ 'vaildtion.vaildtionPassword.hasMinLength' | translate }}</li>
+          <li [class.valid]="passwordChecks.hasMinLength">
+            • {{ 'vaildtion.vaildtionPassword.hasMinLength' | translate }}
+          </li>
         </ul>
       </div>
     </div>
@@ -157,7 +102,7 @@
     <div class="Group">
       <input
         formControlName="confirmPassword"
-        placeholder="{{'auth.confirmpassword'|translate}}"
+        placeholder="{{ 'auth.confirmpassword' | translate }}"
         type="password"
       />
       <i class="fa-solid fa-lock out-icon"></i>
@@ -167,7 +112,7 @@
           *ngIf="
             getControlName('confirmPassword')?.invalid && getControlName('confirmPassword')?.touched
           "
-          >{{"vaildtion.required"|translate}}</small
+          >{{ 'vaildtion.required' | translate }}</small
         >
 
         <small
@@ -178,62 +123,9 @@
       </div>
     </div>
 
-    <div class="Group">
-      <input formControlName="nationalId" placeholder="{{'auth.nationalId'|translate}}" type="text" />
-      <div class="wrapper-error">
-        <small
-          class="error-message"
-          *ngIf="getControlName('nationalId')?.invalid && getControlName('nationalId')?.touched"
-          >{{"vaildtion.required"|translate}}</small
-        >
-      </div>
-    </div>
-
-    <div class="Group">
-      <p-select
-        formControlName="specializationTypeId"
-        [options]="dataSpecializationType()"
-        optionLabel="name"
-        optionValue="id"
-        placeholder="{{'auth.specialization'|translate}}"
-      />
-      <div class="wrapper-error">
-        <small
-          class="error-message"
-          *ngIf="
-            getControlName('specializationTypeId')?.invalid &&
-            getControlName('specializationTypeId')?.touched
-          "
-          >{{"vaildtion.required"|translate}}
-        </small>
-      </div>
-    </div>
-
-    <div class="Group">
-      <div class="upload-group">
-        <p>Upload This File Pdf</p>
-        <label for="pdf-file"><i class="fa-solid fa-cloud-arrow-up"></i></label>
-        <input
-          accept="application/pdf"
-          (change)="onFileSelected($event)"
-          id="pdf-file"
-          type="file"
-        />
-        <div class="pdf-preview" *ngIf="pdfUrl">
-          <iframe [src]="pdfUrl" width="100%" height="400px"></iframe>
-        </div>
-      </div>
-      <div>
-        <small
-          class="error-message"
-          *ngIf="getControlName('Documents')?.invalid && getControlName('Documents')?.touched"
-          >{{"vaildtion.required"|translate}}
-        </small>
-      </div>
-    </div>
-
     <div class="Group-btn">
       <button class="Sign-up" type="submit">Sign Up</button>
     </div>
+
   </form>
 </div>

@@ -4,6 +4,7 @@ import { Data } from '../../Core/Servies/data';
 import { Router } from '@angular/router';
 import * as jwtdecoded from 'jwt-decode';
 import { IresponseToken } from '../Interface/shared.interface';
+
 @Component({
   selector: 'app-login',
   standalone: false,
@@ -19,6 +20,8 @@ export class Login implements OnInit {
 
   FormLogin = signal<FormGroup>(new FormGroup({}));
   @Output() CloseDilog = new EventEmitter<boolean>();
+  @Output() createaccount = new EventEmitter<boolean>();
+  @Output() exsistaccount = new EventEmitter<boolean>();
 
   CreateForm() {
     let form = this.FB.group({
@@ -57,5 +60,13 @@ export class Login implements OnInit {
 
   getControlName(controlname: string) {
     return this.FormLogin().get(controlname);
+  }
+
+  login() {
+    this.exsistaccount.emit(true)
+  }
+
+  Register() {
+    this.createaccount.emit(false)
   }
 }

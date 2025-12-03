@@ -28,8 +28,6 @@
   </div>
 </div>
 
-
-
 <p-dialog
   [modal]="true"
   [(visible)]="visible"
@@ -37,8 +35,14 @@
   [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
   [maximizable]="true"
 >
-<app-register></app-register>
+  <app-register
+    (createaccount)="onCreateAccpunt()"
+    (exsistaccount)="isExsistAccount()"
+  ></app-register>
 </p-dialog>
+
+
+
 
 
 <p-dialog
@@ -48,5 +52,10 @@
   [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
   [maximizable]="true"
 >
-<app-login></app-login>
+  <app-login
+    (createaccount)="onCreateAccpunt()"
+    (exsistaccount)="isExsistAccount()"
+    (CloseDilog)="onCloseDilog()"
+  >
+  </app-login>
 </p-dialog>

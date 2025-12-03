@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header [drawerDoctor]="drawerDoctor()"></app-header>
 <main class="wrapper-main">
   <div class="position-relative">
     <img
@@ -12,7 +12,7 @@
       <div class="exsist-Acount-doctor">
         <p>
           If you are a doctor, register with us.
-          <button><i class="fa-solid fa-arrow-right"></i></button>
+          <button (click)="onShowDilogDoctor()"><i class="fa-solid fa-arrow-right"></i></button>
         </p>
       </div>
     </div>
@@ -170,6 +170,9 @@
       </div>
     </div>
 
+  </div>
+  <div class="load-data">
+    <p><i class="fa-solid fa-arrow-left"></i> You can book a call with your doctor <i class="fa-solid fa-phone"></i></p>
   </div>
 </main>
 
