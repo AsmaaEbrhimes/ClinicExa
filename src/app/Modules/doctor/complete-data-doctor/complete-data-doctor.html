@@ -28,6 +28,14 @@
     <input formControlName="NationalId" type="text" id="NationalId" name="NationalId" required placeholder="National ID"/>
   </div>
 
+  <div>
+    <label class="upload-pdf" for="fileUpload"><i class="fa-solid fa-cloud-arrow-up"></i></label>
+    <input type="file" id="fileUpload" (change)="onFileSelected($event)" accept="application/pdf" />
+  </div>
+<div *ngIf="uploadedPdfName" class="uploaded-pdf-info">
+  <img height="30" width="30"  src="assets/Img/3d-file-pdf-folder-icon-illustration-png.webp" alt="PDF Icon"/>
+  <a [href]="uploadedPdfUrl" target="_blank">{{ uploadedPdfName }}</a>
+</div>
 
   <button (click)="onSupmit()">{{ 'submit' | translate }}</button>
 </form>

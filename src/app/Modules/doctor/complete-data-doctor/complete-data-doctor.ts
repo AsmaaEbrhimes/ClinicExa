@@ -20,11 +20,11 @@ export class CompleteDataDoctor implements OnInit {
     this.getSpecializationType();
   }
 
-
   FormProfileDoctor = signal<FormGroup>(new FormGroup({}));
   datagender = signal<Igender[]>([]);
   SpecializationType = signal<ISpecializationType[]>([]);
-
+  uploadedPdfName: string | null = null;
+  uploadedPdfUrl: string | null = null;
 
   createDoctorProfile() {
     let form = this.FB.group({
@@ -34,55 +34,63 @@ export class CompleteDataDoctor implements OnInit {
       Gender: ['', Validators.required],
       NationalId: ['', Validators.required],
       SpecializationTypeId: ['', Validators.required],
+      Documents: ['', Validators.required],
     });
     this.FormProfileDoctor.set(form);
   }
 
   getTheGender() {
-    this.DataServies.get<Igender[]>('GeneralEnums/Gender').subscribe((res) => this.datagender.set(res));
-  }
-
-  getSpecializationType() {
-    this.DataServies.get<ISpecializationType[]>('GeneralEnums/specializationType').subscribe((res) =>
-      this.SpecializationType.set(res)
+    this.DataServies.get<Igender[]>('GeneralEnums/Gender').subscribe((res) =>
+      this.datagender.set(res)
     );
   }
 
-convertToFormData(form: FormGroup): FormData {
-  const formData = new FormData();
-
-  Object.keys(form.controls).forEach(key => {
-    let value = form.get(key)?.value;
-
-    if (value instanceof Date) {
-      value = value.toISOString().split('T')[0];
-    }
-
-    if (value instanceof File) {
-      formData.append(key, value, value.name);
-    } else {
-      formData.append(key, value);
-    }
-  });
-
-  return formData;
-}
-
-
-
-
-onSupmit() {
-  if (this.FormProfileDoctor().invalid) {
-    this.FormProfileDoctor().markAllAsTouched();
-    return;
+  getSpecializationType() {
+    this.DataServies.get<ISpecializationType[]>('GeneralEnums/specializationType').subscribe(
+      (res) => this.SpecializationType.set(res)
+    );
   }
 
-  const formData = this.convertToFormData(this.FormProfileDoctor());
+ convertToFormData(form: FormGroup): FormData {
+    const formData = new FormData();
+    Object.keys(form.controls).forEach((key) => {
+      let value = form.get(key)?.value;
 
-  this.DataServies.post('Doctors/CompleteProfile', formData).subscribe({
-    next: (res) => console.log("Success:", res),
-    error: (err) => console.log("Error:", err)
-  });
-}
+      if (value instanceof Date) {
+        value = value.toISOString().split('T')[0];
+      }
+      if (value instanceof File) {
+        formData.append(key, value, value.name);
+      } else if (value !== null && value !== undefined) {
+        formData.append(key, value);
+      }
+    });
+    return formData;
+  }
 
+
+
+
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      this.FormProfileDoctor().get('Documents')?.setValue(file);
+      this.uploadedPdfName = file.name;
+      this.uploadedPdfUrl = URL.createObjectURL(file);
+    }
+  }
+
+
+
+  onSupmit() {
+    if (this.FormProfileDoctor().invalid) {
+      this.FormProfileDoctor().markAllAsTouched();
+      return;
+    }
+    const formData = this.convertToFormData(this.FormProfileDoctor());
+    this.DataServies.post('Doctors/CompleteProfile', formData).subscribe({
+      next: (res) => console.log('Success:', res),
+      error: (err) => console.log('Error:', err),
+    });
+  }
 }
