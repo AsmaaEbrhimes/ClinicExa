@@ -12,6 +12,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./Modules/authntiction/authntiction-module').then((m) => m.AuthntictionModule),
   },
+
+  {
+    path: 'Doctor',
+    loadChildren: () =>
+      import('./Modules/doctor/doctor-module').then((m) => m.DoctorModule),
+  },
 ];
 
 @NgModule({

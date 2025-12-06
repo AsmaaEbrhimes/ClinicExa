@@ -5,17 +5,19 @@
     <button (click)="Register()">Sign Up</button>
   </div>
   <form [formGroup]="Formregister()" (ngSubmit)="onSubmit()">
+
     <div class="Group">
-      <input formControlName="name" placeholder="{{ 'auth.namear' | translate }}" />
+      <input formControlName="firstNameAr" placeholder="{{ 'auth.namear' | translate }}" />
       <i class="fa-solid fa-user out-icon"></i>
       <div class="wrapper-error">
         <small
           class="error-message"
-          *ngIf="getControlName('name')?.invalid && getControlName('name')?.touched"
+          *ngIf="getControlName('firstNameAr')?.invalid && getControlName('firstNameAr')?.touched"
           >{{ 'vaildtion.required' | translate }}</small
         >
       </div>
     </div>
+
 
     <div class="Group">
       <input type="email" formControlName="email" placeholder="{{ 'auth.email' | translate }}" />
@@ -26,7 +28,6 @@
           *ngIf="getControlName('email')?.invalid && getControlName('email')?.touched &&!getControlName('email')?.errors?.['pattern']"
           >{{ 'vaildtion.required' | translate }}</small
         >
-
         <small
           class="error-message"
           *ngIf="getControlName('email')?.errors?.['pattern'] && getControlName('email')?.touched"
@@ -34,6 +35,8 @@
         >
       </div>
     </div>
+
+
 
     <div class="Group">
       <input
@@ -106,11 +109,12 @@
         type="password"
       />
       <i class="fa-solid fa-lock out-icon"></i>
+
       <div class="wrapper-error">
         <small
           class="error-message"
           *ngIf="
-            getControlName('confirmPassword')?.invalid && getControlName('confirmPassword')?.touched
+            getControlName('confirmPassword')?.invalid && getControlName('confirmPassword')?.touched&&!Formregister().hasError('misMatch')
           "
           >{{ 'vaildtion.required' | translate }}</small
         >
