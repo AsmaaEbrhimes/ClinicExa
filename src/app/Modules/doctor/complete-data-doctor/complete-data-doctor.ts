@@ -51,7 +51,7 @@ export class CompleteDataDoctor implements OnInit {
     );
   }
 
- convertToFormData(form: FormGroup): FormData {
+  convertToFormData(form: FormGroup): FormData {
     const formData = new FormData();
     Object.keys(form.controls).forEach((key) => {
       let value = form.get(key)?.value;
@@ -68,9 +68,6 @@ export class CompleteDataDoctor implements OnInit {
     return formData;
   }
 
-
-
-
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
     if (file) {
@@ -79,8 +76,6 @@ export class CompleteDataDoctor implements OnInit {
       this.uploadedPdfUrl = URL.createObjectURL(file);
     }
   }
-
-
 
   onSupmit() {
     if (this.FormProfileDoctor().invalid) {
@@ -92,5 +87,9 @@ export class CompleteDataDoctor implements OnInit {
       next: (res) => console.log('Success:', res),
       error: (err) => console.log('Error:', err),
     });
+  }
+
+  getControlName(controlname: string) {
+    return this.FormProfileDoctor().get(controlname);
   }
 }

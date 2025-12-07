@@ -1,41 +1,102 @@
 <app-header></app-header>
 <form [formGroup]="FormProfileDoctor()">
+  
   <div class="group">
     <input formControlName="NameAr" type="text" placeholder="NameAr" required />
+    <div class="wrapper-error">
+      <small class="error-message" *ngIf="getControlName('NameAr')?.invalid && getControlName('NameAr')?.touched">{{
+        'vaildtion.required' | translate}}*</small>
+    </div>
   </div>
 
-    <div class="group">
+  <div class="group">
     <input formControlName="NameEn" type="text" placeholder="NameEn" required />
+    <div class="wrapper-error">
+      <small class="error-message" *ngIf="getControlName('NameEn')?.invalid && getControlName('NameEn')?.touched">{{
+        'vaildtion.required' | translate}}*</small>
+    </div>
   </div>
-
 
   <div class="group">
-    <p-datepicker dateFormat="yy-mm-dd" formControlName="DateOfBirth" placeholder="DateOfBirth" [style]="{ width: '100%' }" />
+    <p-datepicker
+      dateFormat="yy-mm-dd"
+      formControlName="DateOfBirth"
+      placeholder="DateOfBirth"
+      [style]="{ width: '100%' }"
+    />
+    <div class="wrapper-error">
+      <small class="error-message"
+        *ngIf="getControlName('DateOfBirth')?.invalid && getControlName('DateOfBirth')?.touched"
+        >{{ 'vaildtion.required' | translate }}*</small
+      >
+    </div>
   </div>
 
   <div class="group">
-    <p-select formControlName="Gender" optionValue="id" [options]="datagender()" optionLabel="name"  placeholder="Select a Gender" />
+    <p-select
+      formControlName="Gender"
+      optionValue="id"
+      [options]="datagender()"
+      optionLabel="name"
+      placeholder="Select a Gender"
+    />
+    <div class="wrapper-error">
+      <small class="error-message" *ngIf="getControlName('Gender')?.invalid && getControlName('Gender')?.touched">{{'vaildtion.required' | translate}}*</small>
+    </div>
   </div>
-
 
   <div class="group">
-    <p-select formControlName="SpecializationTypeId" optionValue="id" [options]="SpecializationType()" optionLabel="name" placeholder="Select a SpecializationType" />
+    <p-select
+      formControlName="SpecializationTypeId"
+      optionValue="id"
+      [options]="SpecializationType()"
+      optionLabel="name"
+      placeholder="Select a SpecializationType"
+    />
+    <div class="wrapper-error">
+      <small
+      class="error-message"
+        *ngIf="
+          getControlName('SpecializationTypeId')?.invalid &&
+          getControlName('SpecializationTypeId')?.touched
+        "
+        >{{ 'vaildtion.required' | translate }}*</small
+      >
+    </div>
   </div>
-
-
 
   <div class="group">
-    <input formControlName="NationalId" type="text" id="NationalId" name="NationalId" required placeholder="National ID"/>
+    <input
+      formControlName="NationalId"
+      type="text"
+      id="NationalId"
+      name="NationalId"
+      required
+      placeholder="National ID"
+    />
+    <div class="wrapper-error">
+      <small
+      class="error-message"
+        *ngIf="getControlName('NationalId')?.invalid && getControlName('NationalId')?.touched"
+        >{{ 'vaildtion.required' | translate }}*</small
+      >
+    </div>
   </div>
 
-  <div>
+  <div class="group">
     <label class="upload-pdf" for="fileUpload"><i class="fa-solid fa-cloud-arrow-up"></i></label>
     <input type="file" id="fileUpload" (change)="onFileSelected($event)" accept="application/pdf" />
+
+    <div *ngIf="uploadedPdfName" class="uploaded-pdf-info">
+      <img
+        height="30"
+        width="30"
+        src="assets/Img/3d-file-pdf-folder-icon-illustration-png.webp"
+        alt="PDF Icon"
+      />
+      <a [href]="uploadedPdfUrl" target="_blank">{{ uploadedPdfName }}</a>
+    </div>
   </div>
-<div *ngIf="uploadedPdfName" class="uploaded-pdf-info">
-  <img height="30" width="30"  src="assets/Img/3d-file-pdf-folder-icon-illustration-png.webp" alt="PDF Icon"/>
-  <a [href]="uploadedPdfUrl" target="_blank">{{ uploadedPdfName }}</a>
-</div>
 
   <button (click)="onSupmit()">{{ 'submit' | translate }}</button>
 </form>
